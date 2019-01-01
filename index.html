@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Mobile Page!</title>
+    <link rel="stylesheet" href="external/externalTheme.css" />
+    <link rel="stylesheet" href="themes/myTheme.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+    <div data-theme="e" id="nav-popup" style="height: 100%;">
+        <div><img src="external/images/Logo.png" class="nav-logo"></div>
+        <div>Subodha 555</div>
+        <ul>
+            <li><a href="#page1" data-icon="home">Home</a></li>
+            <li><a href="#page2" data-icon="grid">Categories</a></li>
+            <li><a href="#page3" data-icon="heart">Favourites</a></li>
+            <li><a href="#page4" data-icon="calendar">Events</a></li>
+        </ul>
+    </div>
+
+    <div data-role="page" id="page1" data-theme="e" class="full-height">
+        <div nav-type="side-nav"></div>
+
+        <div data-role="main" class="ui-content container">
+            <h1>Hello World</h1>
+            <p>Welcome to my First page</p>
+        </div>
+        <div nav-type="main-nav"></div>
+    </div>
+
+
+
+    <div data-role="page" id="page2" data-theme="e" class="full-height">
+        <div nav-type="side-nav"></div>
+        <div data-role="main" class="ui-content container">
+            <h1>Hello World</h1>
+            <p>Welcome to Categories Page</p>
+        </div>
+        <div nav-type="main-nav"></div>
+    </div>
+
+    <div data-role="page" id="page3" data-theme="e" class="full-height">
+        <div nav-type="side-nav"></div>
+        <div data-role="main" class="ui-content container">
+            <h1>Hello World</h1>
+            <p>Welcome to Favourites Page</p>
+        </div>
+        <div nav-type="main-nav"></div>
+    </div>
+
+    <div data-role="page" id="page4" data-theme="e" class="full-height">
+        <div nav-type="side-nav"></div>
+        <div data-role="main" class="ui-content container">
+            <h1>Hello World</h1>
+            <p>Welcome to Events Page</p>
+        </div>
+        <div nav-type="main-nav"></div>
+    </div>
+
+
+<script>
+    $('[data-role=page]').on('pageshow', function (event, ui) {
+        $("#" + event.target.id).find("[nav-type=main-nav]").load("main-navigation.html", function(){
+            $("#" + event.target.id).find("[data-role=navbar]").navbar();
+        });
+    });
+
+    $('[data-role=page]').on('pageinit', function (event, ui) {
+        $("#" + event.target.id).find("[nav-type=side-nav]").load("side-navigation.html", function(){
+            $("#" + event.target.id).find("[data-role=navbar]").navbar();
+            $( "#side-nav-pop" ).show().trigger( "updatelayout" );
+        });
+    });
+
+    $( function() {
+        $( "#nav-popup" ).enhanceWithin().popup();
+    });
+</script>
+</body>
+</html>
