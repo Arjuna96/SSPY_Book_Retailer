@@ -15,14 +15,54 @@
 </head>
 <body>
     <div data-theme="e" id="nav-popup" style="height: 100%;">
-        <div><img src="external/images/Logo.png" class="nav-logo"></div>
-        <div>Subodha 555</div>
-        <ul>
-            <li><a href="#page1" data-icon="home">Home</a></li>
-            <li><a href="#page2" data-icon="grid">Categories</a></li>
-            <li><a href="#page3" data-icon="heart">Favourites</a></li>
-            <li><a href="#page4" data-icon="calendar">Events</a></li>
-        </ul>
+        <div data-role="navbar" class="top-bar-menu">
+            <ul>
+                <li>
+                    <img src="external/images/side-nav-logo.png" class="nav-logo">
+                </li>
+                <li>
+                    <a data-icon="power" class="float-right no-border" data-transition="flow" style="padding-right: 30px;"></a>
+                    <a data-icon="gear" class="float-right no-border" data-transition="flow" style="padding-left: 30px;"></a>
+                </li>
+            </ul>
+            </div>
+        <div class="pad-m-l">
+            <div class="mgn-l-t"><a href="#page1">
+                <i class="glyphicon glyphicon-home pad-m-r"></i>
+                Home
+            </a>
+            </div>
+            <div class="mgn-l-t"><a href="#page2">
+                <i class="glyphicon glyphicon-th pad-m-r"></i>
+                Categories
+            </a>
+            </div>
+            <div class="mgn-l-t"><a href="#page3">
+                <i class="glyphicon glyphicon-heart pad-m-r"></i>
+                Favourites
+            </a>
+            </div>
+            <div class="mgn-l-t"><a href="#page4">
+                <i class="glyphicon glyphicon-calendar pad-m-r"></i>
+                Events</a>
+            </div>
+            <div class="mgn-l-t"><a href="#page5">
+                <i class="glyphicon glyphicon-shopping-cart pad-m-r"></i>
+                My Cart</a>
+            </div>
+            <div class="mgn-l-t"><a href="#page6">
+                <i class="glyphicon glyphicon-star pad-m-r"></i>
+                My Loyalty</a>
+            </div>
+            <div class="mgn-l-t"><a href="#page7">
+                <i class="glyphicon glyphicon-info-sign pad-m-r"></i>
+                About Us</a>
+            </div>
+            <div class="mgn-l-t"><a href="#page8">
+                <i class="glyphicon glyphicon-education pad-m-r"></i>
+                Team</a>
+            </div>
+        </div>
     </div>
 
     <div data-role="page" id="page1" data-theme="e" class="full-height">
@@ -52,8 +92,43 @@
         <div nav-type="main-nav"></div>
     </div>
 
+    <div data-role="page" id="page5" data-theme="e" class="full-height">
+        <div nav-type="side-nav"></div>
 
-<script>
+        <div data-role="main" class="ui-content container">
+            <h1>My Cart</h1>
+        </div>
+        <div nav-type="main-nav"></div>
+    </div>
+
+    <div data-role="page" id="page6" data-theme="e" class="full-height">
+        <div nav-type="side-nav"></div>
+
+        <div data-role="main" class="ui-content container">
+            <h1>My Loyality</h1>
+        </div>
+        <div nav-type="main-nav"></div>
+    </div>
+
+    <div data-role="page" id="page7" data-theme="e" class="full-height">
+        <div nav-type="side-nav"></div>
+
+        <div data-role="main" class="ui-content container">
+            <h1>About Us</h1>
+        </div>
+        <div nav-type="main-nav"></div>
+    </div>
+
+    <div data-role="page" id="page8" data-theme="e" class="full-height">
+        <div nav-type="side-nav"></div>
+
+        <div data-role="main" class="ui-content container">
+            <h1>Team</h1>
+        </div>
+        <div nav-type="main-nav"></div>
+    </div>
+
+    <script>
     $('[data-role=page]').on('pageshow', function (event, ui) {
         $("#" + event.target.id).find("[nav-type=main-nav]").load("main-navigation.html", function(){
             $("#" + event.target.id).find("[data-role=navbar]").navbar();
