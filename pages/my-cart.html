@@ -1,0 +1,106 @@
+<div class="layout-container full-width">
+    <div class="layout-col pad-m-r">
+        <div class="layout-container">
+            <div class="layout-col item-css">
+                <img class="full-width" src="external/images/favorites/image1.jpg">
+            </div>
+            <div class="layout-col v-bottom pad-m-l">
+                <b><div id="item-desc" value="Atlantic Books">Atlantic Books</div></b>
+                <div>Dan Browns</div>
+                <button>USD 2</button>
+                <div data-role="navbar">
+                    <div class="rating" id="first">
+                        <a href="#" data-role="button" data-inline="true" data-icon="star" data-vote="1" data-iconpos="notext" class="inline-block"></a>
+                        <a href="#" data-role="button" data-inline="true" data-icon="star" data-vote="2" data-iconpos="notext" class="inline-block"></a>
+                        <a href="#" data-role="button" data-inline="true" data-icon="star" data-vote="3" data-iconpos="notext" class="inline-block"></a>
+                        <a href="#" data-role="button" data-inline="true" data-icon="star" data-vote="4" data-iconpos="notext" class="inline-block"></a>
+                        <a href="#" data-role="button" data-inline="true" data-icon="star" data-vote="5" data-iconpos="notext" class="inline-block"></a>
+                        <div>Ratings</div>
+                        <b><div class="vote"></div></b>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layout-container pad-m-t">
+            <div class="item-css">Atlantis Books is written by Dan Browns in 2014 and published in 16th. It s a greater chalenge for them to keep to this standard</div>
+        </div>
+        <div class="layout-container pad-m-t full-width">
+            <div class="layout-col" >
+                <img src="themes/images/icons-png/plus-black.png">
+            </div>
+            <div class="layout-col h-middle">1</div>
+            <div class="layout-col h-right">
+                <img src="themes/images/icons-png/minus-black.png">
+            </div>
+        </div>
+        <div class="layout-container pad-m-t full-width">
+            <div class="v-line"></div>
+        </div>
+        <div class="layout-container pad-m-t full-width">
+            <div class="layout-col">Amount</div>
+            <div class="layout-col h-right">
+                <span>USD</span>
+                <input class="layout-col" id="total-val" value="2" type="button">
+            </div>
+        </div>
+        <div class="layout-container pad-m-t full-width event-tabs">
+            <div class="layout-col h-middle white-text event-tab-width" id="booking"><span>Book Now For</span><span class="pad-m-l">$2</span></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    jQuery(function($) {
+        var $form = $('#frmBooking');
+        var handler = StripeCheckout.configure({
+            key: 'pk_test_cp21BcECf4kMMUbSlRlZlsMo',
+            token: function(token) {
+                // Use the token to create the charge with a server-side script.
+                // You can access the token ID with `token.id`
+
+                //This will be printed when the transaction is successful. To charge, server side scripting is required.
+                if(token.id){
+                    $("#thankyouPayment").html("Thank you, your payment was successful!");
+
+                    //You can also use the following code to re-submit the form content to another file for further processing.
+                    //Don't forget to add action to your form
+                    //$form.get(0).submit();
+
+                    //Or save form data locally, using local storage.
+                }
+            }
+        });
+
+        $('#booking').on('click', function(e) {
+            // Open Checkout with further options
+            handler.open({
+                name: 'Book Retailer App',
+                currency: 'gbp',
+                description: $('#item-desc').val(),
+                amount: $('#total-val').val()*100
+            });
+            e.preventDefault();
+        });
+
+        // Close Checkout on page navigation
+        $(window).on('popstate', function() {
+            handler.close();
+        });
+
+        $(".rating a").click(function() {
+            var id = $(this).parent().attr("id");
+            $("#"+ id + ".rating a").each(function(i,v) {
+                $(v).removeClass("rated");
+            });
+
+            $(this).prevAll().each(function(i,v) {
+                $(v).addClass("rated");
+            });
+            $(this).addClass("rated");
+
+            var id = $(this).parent().attr("id");
+            $("#" + id + " .vote").text($(this).data("vote"));
+
+        });
+    });
+</script>

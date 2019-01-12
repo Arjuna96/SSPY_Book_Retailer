@@ -1,0 +1,69 @@
+<div class="layout-container full-width">
+    <div class="layout-col pad-m-r">
+        <div class="layout-container">
+            <div class="layout-col item-css">
+                <img class="full-width" src="external/images/favorites/image1.jpg">
+            </div>
+            <div class="layout-col v-bottom pad-m-l">
+                <b><div>Atlantic Books</div></b>
+                <div>Dan Browns</div>
+                <button>USD 2</button>
+                <div data-role="navbar">
+                    <div class="rating" id="first">
+                        <a href="#" data-role="button" data-inline="true" data-icon="star" data-vote="1" data-iconpos="notext" class="inline-block"></a>
+                        <a href="#" data-role="button" data-inline="true" data-icon="star" data-vote="2" data-iconpos="notext" class="inline-block"></a>
+                        <a href="#" data-role="button" data-inline="true" data-icon="star" data-vote="3" data-iconpos="notext" class="inline-block"></a>
+                        <a href="#" data-role="button" data-inline="true" data-icon="star" data-vote="4" data-iconpos="notext" class="inline-block"></a>
+                        <a href="#" data-role="button" data-inline="true" data-icon="star" data-vote="5" data-iconpos="notext" class="inline-block"></a>
+                        <div>Ratings</div>
+                        <b><div class="vote"></div></b>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layout-container pad-m-t">
+            <div class="item-css">Atlantis Books is written by Dan Browns in 2014 and published in 16th. It s a greater chalenge for them to keep to this standard</div>
+        </div>
+        <div class="layout-container pad-m-t full-width">
+            <div class="layout-col" >
+                <img src="themes/images/icons-png/plus-black.png">
+            </div>
+            <div class="layout-col h-middle">1</div>
+            <div class="layout-col h-right">
+                <img src="themes/images/icons-png/minus-black.png">
+            </div>
+        </div>
+        <div class="layout-container pad-m-t full-width">
+            <div class="v-line"></div>
+        </div>
+        <div class="layout-container pad-m-t full-width">
+            <div class="layout-col">Amount</div>
+            <div class="layout-col"><span class="pad-m-r">USD</span><span>2</span></div>
+        </div>
+        <div class="layout-container pad-m-t full-width event-tabs">
+            <div class="layout-col h-middle white-text event-tab-width" id="booking"><span>Book Now For</span><span class="pad-m-l">$2</span></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(".rating a").click(function() {
+        var id = $(this).parent().attr("id");
+        $("#"+ id + ".rating a").each(function(i,v) {
+            $(v).removeClass("rated");
+        });
+
+        $(this).prevAll().each(function(i,v) {
+            $(v).addClass("rated");
+        });
+        $(this).addClass("rated");
+
+        var id = $(this).parent().attr("id");
+        $("#" + id + " .vote").text($(this).data("vote"));
+
+    });
+
+    $("#booking").click(function() {
+        alert("hey there action fireefd");
+    });
+</script>

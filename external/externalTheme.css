@@ -94,6 +94,10 @@
     padding-right: 10px;
 }
 
+.pad-m-t {
+    padding-top: 10px;
+}
+
 .mgn-m-r {
     margin-right: 10px;
 }
@@ -175,4 +179,21 @@
 .logo-css {
     width: 115px;
     padding-top: 7px;
+}
+
+.rated {
+    background-color: yellow !important;
+}
+
+.rating a {
+    border: 0px !important;
+}
+
+.inline-block {
+    display: inline-block !important;
+}
+
+.v-line {
+    height: 2px;
+    border: solid 0.1px #afa5a5;
 }
