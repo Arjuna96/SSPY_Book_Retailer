@@ -13,12 +13,27 @@
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
+
+<style>
+    @font-face {
+        font-family: "SanFrancisco";
+        src: url("external/fonts/SF-UI-Text-Regular.otf");
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    body {
+        font-family: 'SanFrancisco';
+        background-color: #000000;
+    }
+</style>
+
 <body>
     <div data-theme="e" id="nav-popup" style="height: 100%;">
         <div data-role="navbar" class="top-bar-menu">
             <ul>
                 <li>
-                    <img src="external/images/side-nav-logo.png" class="nav-logo">
+                    <img class="logo-css" src="external/images/side-nav-logo.png" class="nav-logo">
                 </li>
                 <li>
                     <a data-icon="power" class="float-right no-border" data-transition="flow" style="padding-right: 30px;"></a>

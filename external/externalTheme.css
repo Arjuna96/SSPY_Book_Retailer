@@ -170,3 +170,9 @@
     display: inline-block;
     border: 1px solid gray;
 }
+
+/* SideNav CSS */
+.logo-css {
+    width: 115px;
+    padding-top: 7px;
+}
