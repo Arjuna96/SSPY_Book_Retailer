@@ -104,9 +104,9 @@
 .event-item {
     border: 1px solid #fed702;
     border-radius: 5px;
-    padding: 12px 8px;
-    width: 11%;
-    height: 20%;
+    padding: 8px 8px;
+    width: 22%;
+    height: 11%
 }
 
 .location-pin {
