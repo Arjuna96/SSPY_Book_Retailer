@@ -8,7 +8,7 @@
 
 .top-bar-menu {
     padding: 10px;
-    background-color: #0071bc
+    background-color: #030b4a
 }
 
 .float-left {
@@ -32,4 +32,99 @@
 
 .no-border {
     border: none !important;
+}
+
+.layout-container {
+    display: table;
+}
+
+.layout-col {
+    display: table-cell;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.v-top {
+    vertical-align: top;
+}
+
+.v-bottom {
+    vertical-align: bottom;
+}
+
+.v-middle {
+    vertical-align: middle;
+}
+
+.pad-m-l {
+    padding-left: 10px;
+}
+
+.pad-m-r {
+    padding-right: 10px;
+}
+
+.mgn-l-t {
+    margin-top: 15px;
+}
+
+.h-right {
+    text-align: right;
+}
+
+.h-left {
+    text-align: left;
+}
+
+.h-middle {
+    text-align: center;
+}
+
+.white-text {
+    color: #ffffff;
+}
+
+/* Events CSS */
+.event-container-css {
+    border: 1px solid #a0a0a0;
+    border-radius: 2px;
+    padding: 20px;
+}
+
+.event-item {
+    border: 1px solid #fed702;
+    border-radius: 5px;
+    padding: 12px 8px;
+    width: 11%;
+    height: 20%;
+}
+
+.location-pin {
+    width: 30px;
+    height: 30px;
+}
+
+.event-tabs {
+    background-color: #030b4a;
+    margin-top: 20px;
+    padding: 5px 0;
+}
+
+.event-tab-border {
+    border-right: 1px solid #ffffff;
+}
+
+.event-tab-width {
+    width: 33.333%
+}
+
+/* Favorites Css */
+.item-css {
+    border: 1px solid #a0a0a0;
 }

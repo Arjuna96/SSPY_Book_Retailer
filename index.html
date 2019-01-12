@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="themes/myTheme.css" />
     <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
@@ -46,8 +49,48 @@
     <div data-role="page" id="page3" data-theme="e" class="full-height">
         <div nav-type="side-nav"></div>
         <div data-role="main" class="ui-content container">
-            <h1>Hello World</h1>
-            <p>Welcome to Favourites Page</p>
+            <div class="layout-container full-width">
+                <div class="layout-col">
+                    <div class="layout-container">
+                        <div class="layout-col item-css">
+                            <img class="full-width" src="external/images/favorites/image1.jpg">
+                        </div>
+                        <div class="layout-col v-middle">Atlantic Books</div>
+                        <div class="layout-col v-middle">
+                            <i class="glyphicon glyphicon-trash"></i>
+                        </div>
+                    </div>
+                    <div class="layout-container">
+                        <div class="layout-col item-css">
+                            <img class="full-width" src="external/images/favorites/image1.jpg">
+                        </div>
+                        <div class="layout-col v-middle">Atlantic Books</div>
+                        <div class="layout-col v-middle">
+                            <i class="glyphicon glyphicon-trash"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="layout-col">
+                    <div class="layout-container">
+                        <div class="layout-col item-css">
+                            <img class="full-width" src="external/images/favorites/image1.jpg">
+                        </div>
+                        <div class="layout-col v-middle">Atlantic Books</div>
+                        <div class="layout-col v-middle">
+                            <i class="glyphicon glyphicon-trash"></i>
+                        </div>
+                    </div>
+                    <div class="layout-container">
+                        <div class="layout-col item-css">
+                            <img class="full-width" src="external/images/favorites/image1.jpg">
+                        </div>
+                        <div class="layout-col v-middle">Atlantic Books</div>
+                        <div class="layout-col v-middle">
+                            <i class="glyphicon glyphicon-trash"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div nav-type="main-nav"></div>
     </div>
@@ -55,8 +98,83 @@
     <div data-role="page" id="page4" data-theme="e" class="full-height">
         <div nav-type="side-nav"></div>
         <div data-role="main" class="ui-content container">
-            <h1>Hello World</h1>
-            <p>Welcome to Events Page</p>
+            <div class="layout-container full-width">
+                <div class="layout-container event-container-css full-width">
+                    <div class="layout-container full-width">
+                        <div class="layout-col event-item">
+                            <img class="full-width" src="external/images/events/event1.jpg">
+                        </div>
+                        <div class="layout-col v-top pad-m-l">
+                            <div class="layout-container">Coffee & Read</div>
+                            <div class="layout-container">For all book addicts.Read your favourite book
+                                with a sip of coffee</div>
+                            <div class="layout-container full-width">
+                                <div class="layout-col">
+                                    Find more...
+                                </div>
+                                <div class="layout-col h-right">
+                                    <img class="location-pin" src="external/images/events/location-pin.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layout-container full-width event-tabs">
+                        <div class="layout-col h-middle white-text event-tab-border event-tab-width">Going</div>
+                        <div class="layout-col h-middle white-text event-tab-border event-tab-width">May Be</div>
+                        <div class="layout-col h-middle white-text event-tab-width">Not Going</div>
+                    </div>
+                </div>
+                <div class="layout-container event-container-css full-width mgn-l-t">
+                    <div class="layout-container full-width">
+                        <div class="layout-col event-item">
+                            <img class="full-width" src="external/images/events/event2.jpg">
+                        </div>
+                        <div class="layout-col v-top pad-m-l">
+                            <div class="layout-container">Coffee & Read</div>
+                            <div class="layout-container">For all book addicts.Read your favourite book
+                                with a sip of coffee</div>
+                            <div class="layout-container full-width">
+                                <div class="layout-col">
+                                    Find more...
+                                </div>
+                                <div class="layout-col h-right">
+                                    <img class="location-pin" src="external/images/events/location-pin.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layout-container full-width event-tabs">
+                        <div class="layout-col h-middle white-text event-tab-border event-tab-width">Going</div>
+                        <div class="layout-col h-middle white-text event-tab-border event-tab-width">May Be</div>
+                        <div class="layout-col h-middle white-text event-tab-width">Not Going</div>
+                    </div>
+                </div>
+                <div class="layout-container event-container-css full-width mgn-l-t">
+                    <div class="layout-container full-width">
+                        <div class="layout-col event-item">
+                            <img class="full-width" src="external/images/events/event3.jpg">
+                        </div>
+                        <div class="layout-col v-top pad-m-l">
+                            <div class="layout-container">Coffee & Read</div>
+                            <div class="layout-container">For all book addicts.Read your favourite book
+                                with a sip of coffee</div>
+                            <div class="layout-container full-width">
+                                <div class="layout-col">
+                                    Find more...
+                                </div>
+                                <div class="layout-col h-right">
+                                    <img class="location-pin" src="external/images/events/location-pin.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layout-container full-width event-tabs">
+                        <div class="layout-col h-middle white-text event-tab-border event-tab-width">Going</div>
+                        <div class="layout-col h-middle white-text event-tab-border event-tab-width">May Be</div>
+                        <div class="layout-col h-middle white-text event-tab-width">Not Going</div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div nav-type="main-nav"></div>
     </div>
