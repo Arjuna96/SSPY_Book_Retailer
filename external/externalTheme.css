@@ -34,6 +34,30 @@
     border: none !important;
 }
 
+.slide {
+    height: 200px;
+    width: 1335px;
+}
+
+.book-row{
+    display: inline-block;
+    padding: 2px;
+    border: 1px solid #000;
+    background: #fff;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.book{
+    width: 200px;
+    height: 200px;
+}
+
+.row-home{
+    border: 1px solid;
+    padding-bottom: 13px;
+}
+
 .layout-container {
     display: table;
 }
@@ -131,4 +155,18 @@
 /* Favorites Css */
 .item-css {
     border: 1px solid #a0a0a0;
+}
+
+.header{
+    margin: 6px;
+    font-weight: bold;
+}
+
+.descrip {
+    text-align: center;
+}
+
+.cat{
+    display: inline-block;
+    border: 1px solid gray;
 }
