@@ -1,0 +1,1 @@
+cordova.define("cordova-plugin-splashscreen-iphonex-support.SplashScreen",function(n,e,o){var l=n("cordova/exec"),c={show:function(){l(null,null,"SplashScreen","show",[])},hide:function(){l(null,null,"SplashScreen","hide",[])}};o.exports=c});
