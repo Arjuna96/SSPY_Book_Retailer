@@ -2,12 +2,12 @@
     <div class="layout-col pad-m-r">
         <div class="layout-container">
             <div class="layout-col item-css">
-                <img class="full-width" src="external/images/favorites/image1.jpg">
+                <img id="orderItemImage" class="full-width">
             </div>
             <div class="layout-col v-bottom pad-m-l">
-                <b><div>Atlantic Books</div></b>
+                <b><div id="orderItemName"></div></b>
                 <div>Dan Browns</div>
-                <button>USD 2</button>
+                <button>USD <span class="price-val"></span></button>
                 <div data-role="navbar">
                     <div class="rating" id="first">
                         <a href="#" data-role="button" data-inline="true" data-icon="star" data-vote="1" data-iconpos="notext" class="inline-block"></a>
@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="layout-container pad-m-t">
-            <div class="item-css">Atlantis Books is written by Dan Browns in 2014 and published in 16th. It s a greater chalenge for them to keep to this standard</div>
+            <div class="item-css" id="orderItemDescription"></div>
         </div>
         <div class="layout-container pad-m-t full-width">
             <div class="layout-col" >
@@ -38,10 +38,10 @@
         </div>
         <div class="layout-container pad-m-t full-width">
             <div class="layout-col">Amount</div>
-            <div class="layout-col"><span class="pad-m-r">USD</span><span>2</span></div>
+            <div class="layout-col"><span class="pad-m-r">USD</span><span class="price-val"></span></div>
         </div>
         <div class="layout-container pad-m-t full-width event-tabs">
-            <div class="layout-col h-middle white-text event-tab-width" id="booking"><span>Book Now For</span><span class="pad-m-l">$2</span></div>
+            <div class="layout-col h-middle white-text event-tab-width" id="booking"><span>Book Now For $</span><span class="pad-m-l price-val"></span></div>
         </div>
     </div>
 </div>
@@ -66,4 +66,9 @@
     $("#booking").click(function() {
         alert("hey there action fireefd");
     });
+
+    $("#orderItemName").text(JSON.parse(localStorage.getItem('orderDetail')).name);
+    $("#orderItemDescription").text(JSON.parse(localStorage.getItem('orderDetail')).description);
+    $("#orderItemImage").attr("src", "external/images/home/"+ JSON.parse(localStorage.getItem('orderDetail')).imageName);
+    $(".price-val").text(JSON.parse(localStorage.getItem('orderDetail')).price);
 </script>
