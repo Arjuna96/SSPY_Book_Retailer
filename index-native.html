@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Mobile Page!</title>
+    <link rel="stylesheet" href="external/externalTheme.css" />
+    <link rel="stylesheet" href="themes/myTheme.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+</head>
+
+<style>
+    @font-face {
+        font-family: "SanFrancisco";
+        src: url("external/fonts/SF-UI-Text-Regular.otf");
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    body {
+        font-family: 'SanFrancisco';
+        background-color: #000000;
+    }
+</style>
+
+<body onload="initializeCordova()">
+<div data-theme="e" id="nav-popup" style="height: 100%;">
+    <div data-role="navbar" class="top-bar-menu">
+        <ul>
+            <li>
+                <img class="logo-css" src="external/images/side-nav-logo.png" class="nav-logo">
+            </li>
+            <li>
+                <a data-icon="power" class="float-right no-border" data-transition="flow" style="padding-right: 30px;"></a>
+                <a data-icon="gear" class="float-right no-border" data-transition="flow" style="padding-left: 30px;"></a>
+            </li>
+        </ul>
+    </div>
+    <div class="pad-m-l">
+        <div class="mgn-l-t"><a href="#page1">
+            <i class="glyphicon glyphicon-home pad-m-r"></i>
+            Home
+        </a>
+        </div>
+        <div class="mgn-l-t"><a href="#page2">
+            <i class="glyphicon glyphicon-th pad-m-r"></i>
+            Categories
+        </a>
+        </div>
+        <div class="mgn-l-t"><a href="#page3">
+            <i class="glyphicon glyphicon-heart pad-m-r"></i>
+            Favourites
+        </a>
+        </div>
+        <div class="mgn-l-t"><a href="#page4">
+            <i class="glyphicon glyphicon-calendar pad-m-r"></i>
+            Events</a>
+        </div>
+        <div class="mgn-l-t"><a href="#page5">
+            <i class="glyphicon glyphicon-shopping-cart pad-m-r"></i>
+            My Cart</a>
+        </div>
+        <div class="mgn-l-t"><a href="#page6">
+            <i class="glyphicon glyphicon-star pad-m-r"></i>
+            My Loyalty</a>
+        </div>
+        <div class="mgn-l-t"><a href="#page7">
+            <i class="glyphicon glyphicon-info-sign pad-m-r"></i>
+            About Us</a>
+        </div>
+        <div class="mgn-l-t"><a href="#page8">
+            <i class="glyphicon glyphicon-education pad-m-r"></i>
+            Team</a>
+        </div>
+    </div>
+</div>
+
+<div data-role="page" id="page1" data-theme="e" class="full-height">
+    <div nav-type="side-nav"></div>
+
+    <div data-role="main" class="ui-content container" id="home"></div>
+    <div nav-type="main-nav"></div>
+</div>
+
+
+
+<div data-role="page" id="page2" data-theme="e" class="full-height">
+    <div nav-type="side-nav"></div>
+    <div data-role="main" class="ui-content container" id="categories"></div>
+    <div nav-type="main-nav"></div>
+</div>
+
+<div data-role="page" id="page3" data-theme="e" class="full-height">
+    <div nav-type="side-nav"></div>
+    <div data-role="main" class="ui-content container" id="favourites"></div>
+    <div nav-type="main-nav"></div>
+</div>
+
+<div data-role="page" id="page4" data-theme="e" class="full-height">
+    <div nav-type="side-nav"></div>
+    <div data-role="main" class="ui-content container" id="events"></div>
+    <div nav-type="main-nav"></div>
+</div>
+
+<div data-role="page" id="page5" data-theme="e" class="full-height">
+    <div nav-type="side-nav"></div>
+
+    <div data-role="main" class="ui-content container" id="my-cart"></div>
+    <div nav-type="main-nav"></div>
+</div>
+
+<div data-role="page" id="page6" data-theme="e" class="full-height">
+    <div nav-type="side-nav"></div>
+
+    <div data-role="main" class="ui-content container" id="loyalty"></div>
+    <div nav-type="main-nav"></div>
+</div>
+
+<div data-role="page" id="page7" data-theme="e" class="full-height">
+    <div nav-type="side-nav"></div>
+
+    <div data-role="main" class="ui-content container" id="about-us"></div>
+    <div nav-type="main-nav"></div>
+</div>
+
+<div data-role="page" id="page8" data-theme="e" class="full-height">
+    <div nav-type="side-nav"></div>
+
+    <div data-role="main" class="ui-content container" id="team"></div>
+    <div nav-type="main-nav"></div>
+</div>
+
+<div data-role="page" id="page9" data-theme="e" class="full-height">
+    <div nav-type="side-nav"></div>
+
+    <div data-role="main" class="ui-content container" id="order-detail"></div>
+    <div nav-type="main-nav"></div>
+</div>
+
+<script>
+    $('[data-role=page]').on('pageshow', function (event, ui) {
+        $("#" + event.target.id).find("[nav-type=main-nav]").load("main-navigation.html", function(){
+            $("#" + event.target.id).find("[data-role=navbar]").navbar();
+        });
+    });
+
+    $('[data-role=page]').on('pageinit', function (event, ui) {
+        $("#" + event.target.id).find("[nav-type=side-nav]").load("side-navigation.html", function(){
+            $("#" + event.target.id).find("[data-role=navbar]").navbar();
+            $( "#side-nav-pop" ).show().trigger( "updatelayout" );
+        });
+    });
+
+    $('[data-role=page]').on('pageshow', function (event, ui) {
+        $("#" + event.target.id).find("#home").load("pages/home.html", function(){
+            $("#" + event.target.id).find("[data-role=navbar]").navbar();
+        });
+    });
+
+    $('[data-role=page]').on('pageshow', function (event, ui) {
+        $("#" + event.target.id).find("#favourites").load("pages/favourites.html", function(){
+            $("#" + event.target.id).find("[data-role=navbar]").navbar();
+        });
+    });
+
+    $('[data-role=page]').on('pageshow', function (event, ui) {
+        $("#" + event.target.id).find("#categories").load("pages/categories.html", function(){
+            $("#" + event.target.id).find("[data-role=navbar]").navbar();
+        });
+    });
+
+    $('[data-role=page]').on('pageshow', function (event, ui) {
+        $("#" + event.target.id).find("#events").load("pages/events.html", function(){
+            $("#" + event.target.id).find("[data-role=navbar]").navbar();
+        });
+    });
+
+    $('[data-role=page]').on('pageshow', function (event, ui) {
+        $("#" + event.target.id).find("#my-cart").load("pages/my-cart.html", function(){
+            $("#" + event.target.id).find("[data-role=navbar]").navbar();
+        });
+    });
+
+    $('[data-role=page]').on('pageshow', function (event, ui) {
+        $("#" + event.target.id).find("#team").load("pages/team.html", function(){
+            $("#" + event.target.id).find("[data-role=navbar]").navbar();
+        });
+    });
+
+    $('[data-role=page]').on('pageshow', function (event, ui) {
+        $("#" + event.target.id).find("#loyalty").load("pages/loyalty.html", function(){
+            $("#" + event.target.id).find("[data-role=navbar]").navbar();
+        });
+    });
+
+    $('[data-role=page]').on('pageshow', function (event, ui) {
+        $("#" + event.target.id).find("#about-us").load("pages/about-us.html", function(){
+            $("#" + event.target.id).find("[data-role=navbar]").navbar();
+        });
+    });
+
+    $('[data-role=page]').on('pageshow', function (event, ui) {
+        $("#" + event.target.id).find("#order-detail").load("pages/order-detail.html", function(){
+            $("#" + event.target.id).find("[data-role=navbar]").navbar();
+        });
+    });
+
+    $( function() {
+        $( "#nav-popup" ).enhanceWithin().popup();
+    });
+
+    var initializeCordova = function () {
+        var newScript = document.createElement("script");
+        var appNavigator = navigator.userAgent;
+
+        // Global Variable to identify native device
+        navigator.isNativeDevice = true;
+
+        newScript.type = "text/javascript";
+
+        if (appNavigator.indexOf('Mac OS') < 0 && appNavigator.indexOf('iPhone') < 0) {
+            newScript.src = "assets/cordova/android/cordova-1542118971927.js";
+        } else {
+            newScript.src = "assets/cordova/ios/cordova-1542118971927.js";
+        }
+
+        document.head.appendChild(newScript);
+    };
+</script>
+</body>
+</html>
