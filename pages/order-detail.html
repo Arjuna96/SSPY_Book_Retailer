@@ -47,28 +47,63 @@
 </div>
 
 <script>
-    $(".rating a").click(function() {
-        var id = $(this).parent().attr("id");
-        $("#"+ id + ".rating a").each(function(i,v) {
-            $(v).removeClass("rated");
+
+    jQuery(function($) {
+        var $form = $('#frmBooking');
+        var handler = StripeCheckout.configure({
+            key: 'pk_test_cp21BcECf4kMMUbSlRlZlsMo',
+            token: function (token) {
+                // Use the token to create the charge with a server-side script.
+                // You can access the token ID with `token.id`
+
+                //This will be printed when the transaction is successful. To charge, server side scripting is required.
+                if (token.id) {
+                    $("#thankyouPayment").html("Thank you, your payment was successful!");
+
+                    //You can also use the following code to re-submit the form content to another file for further processing.
+                    //Don't forget to add action to your form
+                    //$form.get(0).submit();
+
+                    //Or save form data locally, using local storage.
+                }
+            }
         });
 
-        $(this).prevAll().each(function(i,v) {
-            $(v).addClass("rated");
+        $('#booking').on('click', function (e) {
+            // Open Checkout with further options
+            handler.open({
+                name: 'Book Retailer App',
+                currency: 'gbp',
+                description: JSON.parse(localStorage.getItem('orderDetail')).name,
+                amount: JSON.parse(localStorage.getItem('orderDetail')).price * 100
+            });
+            e.preventDefault();
         });
-        $(this).addClass("rated");
 
-        var id = $(this).parent().attr("id");
-        $("#" + id + " .vote").text($(this).data("vote"));
+        $(".rating a").click(function() {
+            var id = $(this).parent().attr("id");
+            $("#"+ id + ".rating a").each(function(i,v) {
+                $(v).removeClass("rated");
+            });
 
-    });
+            $(this).prevAll().each(function(i,v) {
+                $(v).addClass("rated");
+            });
+            $(this).addClass("rated");
 
-    $("#booking").click(function() {
-        alert("hey there action fireefd");
-    });
+            var id = $(this).parent().attr("id");
+            $("#" + id + " .vote").text($(this).data("vote"));
 
-    $("#orderItemName").text(JSON.parse(localStorage.getItem('orderDetail')).name);
-    $("#orderItemDescription").text(JSON.parse(localStorage.getItem('orderDetail')).description);
-    $("#orderItemImage").attr("src", "external/images/home/"+ JSON.parse(localStorage.getItem('orderDetail')).imageName);
-    $(".price-val").text(JSON.parse(localStorage.getItem('orderDetail')).price);
+        });
+
+//    $("#booking").click(function() {
+//        alert("hey there action fireefd");
+//    });
+
+        $("#orderItemName").text(JSON.parse(localStorage.getItem('orderDetail')).name);
+        $("#orderItemDescription").text(JSON.parse(localStorage.getItem('orderDetail')).description);
+        $("#orderItemImage").attr("src", "external/images/home/"+ JSON.parse(localStorage.getItem('orderDetail')).imageName);
+        $(".price-val").text(JSON.parse(localStorage.getItem('orderDetail')).price);
+
+    })
 </script>

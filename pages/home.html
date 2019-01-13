@@ -7,23 +7,23 @@
         <div class="layout-col row-home">
             <div class="header">Best Sellers</div>
             <div class="book-row">
-                <a id="atlantic"><img class="book atlantic" src="external/images/home/atlantic.jpg"></a>
+                <a href="#page9"><img class="book atlantic" src="external/images/home/atlantic.jpg"></a>
                 <div class="descrip">Atlantic Books</div>
             </div>
             <div class="book-row">
-                <img id="torBooks" class="book torBooks" src="external/images/home/tor.jpg">
+                <a href="#page9"><img class="book torBooks" src="external/images/home/tor.jpg"></a>
                 <div class="descrip">Tor Books</div>
             </div>
             <div class="book-row">
-                <img class="book" src="external/images/home/dutton.png">
+                <a href="#page9"><img class="book duttonBooks" src="external/images/home/dutton.png"></a>
                 <div class="descrip">Dutton Books</div>
             </div>
             <div class="book-row">
-                <img class="book" src="external/images/home/lulu.png">
+                <a href="#page9"><img class="book luluBooks" src="external/images/home/lulu.png"></a>
                 <div class="descrip">Lulu Books</div>
             </div>
             <div class="book-row">
-                <img class="book" src="external/images/home/emi.png">
+                <a href="#page9"><img class="book emiBooks" src="external/images/home/emi.png"></a>
                 <div class="descrip">Emi Books</div>
             </div>
         </div>
@@ -32,23 +32,23 @@
         <div class="layout-col row-home">
             <div class="header">Popular Near You</div>
             <div class="book-row">
-                <img class="book atlantic" src="external/images/home/atlantic.jpg">
+                <a href="#page9"><img class="book atlantic" src="external/images/home/atlantic.jpg"></a>
                 <div class="descrip">Atlantic Books</div>
             </div>
             <div class="book-row">
-                <img class="book torBooks" src="external/images/home/tor.jpg">
+                <a href="#page9"><img class="book torBooks" src="external/images/home/tor.jpg"></a>
                 <div class="descrip">Tor Books</div>
             </div>
             <div class="book-row">
-                <img class="book" src="external/images/home/dutton.png">
+                <a href="#page9"><img class="book duttonBooks" src="external/images/home/dutton.png"></a>
                 <div class="descrip">Dutton Books</div>
             </div>
             <div class="book-row">
-                <img class="book" src="external/images/home/lulu.png">
+                <a href="#page9"><img class="book luluBooks" src="external/images/home/lulu.png"></a>
                 <div class="descrip">Lulu Books</div>
             </div>
             <div class="book-row">
-                <img class="book" src="external/images/home/emi.png">
+                <a href="#page9"><img class="book emiBooks" src="external/images/home/emi.png"></a>
                 <div class="descrip">Emi Books</div>
             </div>
         </div>
@@ -57,23 +57,23 @@
         <div class="layout-col row-home">
             <div class="header">Suggested</div>
             <div class="book-row">
-                <img class="book atlantic" src="external/images/home/atlantic.jpg">
+                <a href="#page9"><img class="book atlantic" src="external/images/home/atlantic.jpg"></a>
                 <div class="descrip">Atlantic Books</div>
             </div>
             <div class="book-row">
-                <img class="book torBooks" src="external/images/home/tor.jpg">
+                <a href="#page9"><img class="book torBooks" src="external/images/home/tor.jpg"></a>
                 <div class="descrip">Tor Books</div>
             </div>
             <div class="book-row">
-                <img class="book" src="external/images/home/dutton.png">
+                <a href="#page9"><img class="book duttonBooks" src="external/images/home/dutton.png"></a>
                 <div class="descrip">Dutton Books</div>
             </div>
             <div class="book-row">
-                <img class="book" src="external/images/home/lulu.png">
+                <a href="#page9"><img class="book luluBooks" src="external/images/home/lulu.png"></a>
                 <div class="descrip">Lulu Books</div>
             </div>
             <div class="book-row">
-                <img class="book" src="external/images/home/emi.png">
+                <a href="#page9"><img class="book emiBooks" src="external/images/home/emi.png"></a>
                 <div class="descrip">Emi Books</div>
             </div>
         </div>
@@ -94,7 +94,7 @@
             localStorage.setItem('orderDetail', JSON.stringify(testObject));
         }
         // Change page
-        $.mobile.changePage("#page9");
+//        $.mobile.changePage("#page9");
     });
 
     $(document).on('click', '.torBooks', function(){
@@ -110,6 +110,54 @@
             localStorage.setItem('orderDetail', JSON.stringify(testObject));
         }
         // Change page
-        $.mobile.changePage("#page9");
+//        $.mobile.changePage("#page9");
+    });
+
+    $(document).on('click', '.duttonBooks', function(){
+        // store some data
+        if(typeof(Storage)!=="undefined") {
+            var testObject = {
+                'name': "Dutton Books",
+                'description': "Dutton Books is written by Magens Browns in 2014 and published in 16th. It s a greater chalenge for them to keep to this standard",
+                'imageName': "dutton.png",
+                'price': 5
+            };
+
+            localStorage.setItem('orderDetail', JSON.stringify(testObject));
+        }
+        // Change page
+//        $.mobile.changePage("#page9");
+    });
+
+    $(document).on('click', '.luluBooks', function(){
+        // store some data
+        if(typeof(Storage)!=="undefined") {
+            var testObject = {
+                'name': "Lulu Books",
+                'description': "LuLU Books is written by Magens Browns in 2014 and published in 16th. It s a greater chalenge for them to keep to this standard",
+                'imageName': "lulu.png",
+                'price': 8.5
+            };
+
+            localStorage.setItem('orderDetail', JSON.stringify(testObject));
+        }
+        // Change page
+//        $.mobile.changePage("#page9");
+    });
+
+    $(document).on('click', '.emiBooks', function(){
+        // store some data
+        if(typeof(Storage)!=="undefined") {
+            var testObject = {
+                'name': "Emi Books",
+                'description': "EMI Books is written by Magens Browns in 2014 and published in 16th. It s a greater chalenge for them to keep to this standard",
+                'imageName': "emi.png",
+                'price': 11.7
+            };
+
+            localStorage.setItem('orderDetail', JSON.stringify(testObject));
+        }
+        // Change page
+//        $.mobile.changePage("#page9");
     });
 </script>
