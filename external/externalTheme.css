@@ -46,11 +46,12 @@
     background: #fff;
     margin-right: 20px;
     margin-left: 20px;
+    margin-bottom: 20px;
 }
 
 .book{
-    width: 200px;
-    height: 200px;
+    width: 125px;
+    height: 110px;
 }
 
 .row-home{
@@ -172,7 +173,9 @@
 
 .cat{
     display: inline-block;
-    border: 1px solid gray;
+    margin-left: 40px;
+    margin-right: 30px;
+    margin-bottom: 40px;
 }
 
 /* SideNav CSS */
@@ -196,4 +199,12 @@
 .v-line {
     height: 2px;
     border: solid 0.1px #afa5a5;
+}
+
+.row{
+    display: inline-block;
+}
+
+.row-margin{
+    margin-bottom: 50px;
 }
