@@ -99,6 +99,10 @@
     padding-top: 10px;
 }
 
+.pad-m-b {
+    padding-bottom: 10px;
+}
+
 .mgn-m-r {
     margin-right: 10px;
 }
@@ -189,7 +193,7 @@
 }
 
 .rated {
-    background-color: yellow !important;
+    background-color: #fed702 !important;
 }
 
 .rating a {
@@ -216,4 +220,35 @@
 /* Login CSS */
 .login-back {
     background: #030b4a;
+}
+
+.login-logo {
+    max-height: 50%;
+    max-width: 50%
+}
+
+.login-btn {
+    background: #fed702;
+    color: #030b4a;
+    height: 38px;
+    border-radius: 5px;
+    border: 1px solid #fed702;
+    width: 30%;
+}
+
+.login-btn a {
+    color: #030b4a !important;
+}
+
+.input-field {
+    border-radius: 5px;
+    height: 38px;
+    color: #000000;
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    width: 40%;
+}
+
+.input-field::-webkit-input-placeholder {
+    padding-left: 10px;
 }

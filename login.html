@@ -1,67 +1,33 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-    <!--<meta charset="UTF-8">-->
-    <!--<title>My Mobile Page!</title>-->
-    <!--<link rel="stylesheet" href="external/externalTheme.css"/>-->
-    <!--<link rel="stylesheet" href="themes/myTheme.css"/>-->
-    <!--<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css"/>-->
-    <!--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>-->
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
-    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
-    <!--<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>-->
-    <!--<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
-<!--</head>-->
-
-<!--<style>-->
-    <!--@font-face {-->
-        <!--font-family: "SanFrancisco";-->
-        <!--src: url("external/fonts/SF-UI-Text-Regular.otf");-->
-        <!--font-weight: normal;-->
-        <!--font-style: normal;-->
-    <!--}-->
-
-    <!--body {-->
-        <!--font-family: 'SanFrancisco';-->
-        <!--background-color: #000000;-->
-    <!--}-->
-<!--</style>-->
-
-<!--<body>-->
-
-<div style="background-color: #030b4a" class="full-width">
-    <div class="layout-container full-width">
-        <div class="layout-col pad-m-r">
-            <div class="layout-col login-logo" style="padding: 50px 0px 50px 50px" >
-                <img src="external/images/side-nav-logo.png" class="nav-logo">
-            </div>
-        </div>
-        <div class="layout-col pad-m-r">
-            <div class="layout-container" >
-                <div class="layout-col">
-                    <label for="text-6" style="color:#ffffff;">Username : </label>
-                    <input type="text" name="text-6" id="text-6" value="" placeholder="Enter Username">
-                </div>
-            </div>
-
-            <div class="layout-col">
-                <div class="layout-col v-left pad-m-r" >
-                    <label for="text-7" class="login-text" style="color:#ffffff;padding-left: 30px;">Password : </label>
-                    <input type="text" data-clear-btn="true" name="text-7" id="text-7" value=""
-                           placeholder="Enter Password">
-                </div>
-            </div>
-
-            <div class="layout-col">
-                <div class="layout-col v-left pad-m-r">
-                    <button class="btn btn-success btn-md"><a href="#page1">Login</a></button>
-                </div>
-            </div>
+<div>
+<div class="layout-container full-width login-back full-height">
+    <div class="layout-container full-width" style="height: 60%">
+        <div class="layout-col pad-m-r h-middle">
+            <img class="login-logo" src="external/images/login-logo.png">
         </div>
     </div>
+    <div class="layout-container full-width" style="height: 30%">
+        <div class="layout-col h-middle">
+            <div class="layout-container full-width h-middle">
+                <div class="layout-col">
+                    <!--<label for="text-6" class="white-text"></label>-->
+                    <input type="text" name="text-6" id="text-6" value="" class="input-field" placeholder="Username">
+                </div>
+            </div>
+
+            <div class="layout-container full-width h-middle">
+                <div class="layout-col pad-m-t">
+                    <!--<label for="text-7" class="white-text"></label>-->
+                    <input type="password" data-clear-btn="true" name="text-7" id="text-7" class="input-field" value=""
+                           placeholder="Password">
+                </div>
+            </div>
+
+            <div class="layout-container full-width h-middle mgn-l-t pad-m-b">
+                <div class="layout-col pad-m-t">
+                    <button class="btn login-btn btn-md"><a href="#page1">Login</a></button>
+                </div>
+            </div>
+         </div>
+    </div>
 </div>
-
-<!--</body>-->
-
-<!--</html>-->
+</div>
