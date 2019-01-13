@@ -123,6 +123,10 @@
     color: #ffffff;
 }
 
+.bold {
+    font-weight: bold;
+}
+
 /* Events CSS */
 .event-container-css {
     border: 1px solid #a0a0a0;
@@ -207,4 +211,9 @@
 
 .row-margin {
     margin-bottom: 50px;
+}
+
+/* Login CSS */
+.login-back {
+    background: #030b4a;
 }

@@ -78,6 +78,10 @@
                 <i class="glyphicon glyphicon-education pad-m-r"></i>
                 Team</a>
             </div>
+            <div class="mgn-l-t"><a href="#page10">
+                <i class="glyphicon glyphicon-map-marker pad-m-r"></i>
+                Event Details</a>
+            </div>
         </div>
     </div>
 
@@ -87,8 +91,6 @@
         <div data-role="main" class="ui-content container" id="home"></div>
         <div nav-type="main-nav"></div>
     </div>
-
-
 
     <div data-role="page" id="page2" data-theme="e" class="full-height">
         <div nav-type="side-nav"></div>
@@ -140,6 +142,13 @@
         <div nav-type="side-nav"></div>
 
         <div data-role="main" class="ui-content container" id="order-detail"></div>
+        <div nav-type="main-nav"></div>
+    </div>
+
+    <div data-role="page" id="page10" data-theme="e" class="full-height">
+        <div nav-type="side-nav"></div>
+
+        <div data-role="main" class="ui-content container" id="event-details"></div>
         <div nav-type="main-nav"></div>
     </div>
 
@@ -207,6 +216,12 @@
 
     $('[data-role=page]').on('pageshow', function (event, ui) {
         $("#" + event.target.id).find("#order-detail").load("pages/order-detail.html", function(){
+            $("#" + event.target.id).find("[data-role=navbar]").navbar();
+        });
+    });
+
+    $('[data-role=page]').on('pageshow', function (event, ui) {
+        $("#" + event.target.id).find("#event-details").load("pages/event-details.html", function(){
             $("#" + event.target.id).find("[data-role=navbar]").navbar();
         });
     });
