@@ -205,8 +205,7 @@
 }
 
 .v-line {
-    height: 2px;
-    border: solid 0.1px #afa5a5;
+    border-bottom: solid 1px #ebebeb;
 }
 
 .row {
@@ -251,4 +250,34 @@
 
 .input-field::-webkit-input-placeholder {
     padding-left: 10px;
+}
+
+/* Cart CSS */
+.price-label {
+    border: 1px solid #030b4a;
+    border-radius: 5px;
+    width: 100px;
+}
+
+.primary-btn-css {
+    height: 38px;
+    background: #030b4a;
+    color: #fed702;
+}
+
+.circle {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 1px solid #030b4a;
+}
+
+.icon-plus {
+    padding-top: 10px;
+    padding-left: 12px;
+}
+
+.icon-minus {
+    padding-top: 10px;
+    padding-right: 12px;
 }
