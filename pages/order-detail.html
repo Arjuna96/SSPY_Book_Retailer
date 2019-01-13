@@ -26,11 +26,11 @@
         </div>
         <div class="layout-container pad-m-t full-width">
             <div class="layout-col" >
-                <img src="themes/images/icons-png/plus-black.png">
+                <a id="qtyIncrementer"><img src="themes/images/icons-png/plus-black.png"></a>
             </div>
-            <div class="layout-col h-middle">1</div>
+            <div class=" h-middle"><input id="qtyVal" type="text" disabled class="h-middle layout-col" value=1></div>
             <div class="layout-col h-right">
-                <img src="themes/images/icons-png/minus-black.png">
+                <a id="qtyDecrementor"><img src="themes/images/icons-png/minus-black.png"></a>
             </div>
         </div>
         <div class="layout-container pad-m-t full-width">
@@ -38,10 +38,10 @@
         </div>
         <div class="layout-container pad-m-t full-width">
             <div class="layout-col">Amount</div>
-            <div class="layout-col"><span class="pad-m-r">USD</span><span class="price-val"></span></div>
+            <div class="layout-col h-right"><span class="pad-m-r">USD</span><span class="price-val"></span></div>
         </div>
         <div class="layout-container pad-m-t full-width event-tabs">
-            <div class="layout-col h-middle white-text event-tab-width" id="booking"><span>Book Now For $</span><span class="pad-m-l price-val"></span></div>
+            <div class="layout-col h-middle white-text event-tab-width" id="booking"><span>Book Now For $</span><span class="pad-m-l total-price"></span></div>
         </div>
     </div>
 </div>
@@ -80,6 +80,18 @@
             e.preventDefault();
         });
 
+        $('#qtyIncrementer').on('click', function (e) {
+            $('#qtyVal').val(parseInt($('#qtyVal').val()) + 1);
+            $(".total-price").text(JSON.parse(localStorage.getItem('orderDetail')).price * parseInt($('#qtyVal').val()));
+        });
+
+        $('#qtyDecrementor').on('click', function (e) {
+            if (parseInt($('#qtyVal').val()) > 1) {
+                $('#qtyVal').val(parseInt($('#qtyVal').val() - 1));
+                $(".total-price").text(JSON.parse(localStorage.getItem('orderDetail')).price * parseInt($('#qtyVal').val()));
+            }
+        });
+
         $(".rating a").click(function() {
             var id = $(this).parent().attr("id");
             $("#"+ id + ".rating a").each(function(i,v) {
@@ -96,14 +108,10 @@
 
         });
 
-//    $("#booking").click(function() {
-//        alert("hey there action fireefd");
-//    });
-
         $("#orderItemName").text(JSON.parse(localStorage.getItem('orderDetail')).name);
         $("#orderItemDescription").text(JSON.parse(localStorage.getItem('orderDetail')).description);
         $("#orderItemImage").attr("src", "external/images/home/"+ JSON.parse(localStorage.getItem('orderDetail')).imageName);
         $(".price-val").text(JSON.parse(localStorage.getItem('orderDetail')).price);
-
+        $(".total-price").text(JSON.parse(localStorage.getItem('orderDetail')).price * parseInt($('#qtyVal').val()));
     })
 </script>
