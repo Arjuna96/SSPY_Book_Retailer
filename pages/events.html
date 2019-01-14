@@ -14,7 +14,7 @@
                             Find more...
                         </div>
                         <div class="layout-col h-right">
-                            <img class="location-pin" src="external/images/events/location-pin.png">
+                            <a href="#page11" class="coffeeNRead"><img class="location-pin" src="external/images/events/location-pin.png"></a>
                         </div>
                     </div>
                 </div>
@@ -31,7 +31,7 @@
                     <img class="full-width" src="external/images/events/event2.jpg">
                 </div>
                 <div class="layout-col v-top pad-m-l">
-                    <div class="layout-container">Coffee & Read</div>
+                    <div class="layout-container">Book Launch</div>
                     <div class="layout-container">For all book addicts.Read your favourite book
                         with a sip of coffee</div>
                     <div class="layout-container full-width">
@@ -39,7 +39,7 @@
                             Find more...
                         </div>
                         <div class="layout-col h-right">
-                            <img class="location-pin" src="external/images/events/location-pin.png">
+                            <a href="#page11" class="bookLaunch"><img class="location-pin" src="external/images/events/location-pin.png"></a>
                         </div>
                     </div>
                 </div>
@@ -56,7 +56,7 @@
                     <img class="full-width" src="external/images/events/event3.jpg">
                 </div>
                 <div class="layout-col v-top pad-m-l">
-                    <div class="layout-container">Coffee & Read</div>
+                    <div class="layout-container">Children Party</div>
                     <div class="layout-container">For all book addicts.Read your favourite book
                         with a sip of coffee</div>
                     <div class="layout-container full-width">
@@ -64,7 +64,7 @@
                             Find more...
                         </div>
                         <div class="layout-col h-right">
-                            <img class="location-pin" src="external/images/events/location-pin.png">
+                            <a href="#page11" class="childrenParty"><img class="location-pin" src="external/images/events/location-pin.png"></a>
                         </div>
                     </div>
                 </div>
@@ -77,3 +77,41 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(document).on('click', '.coffeeNRead', function(){
+        if(typeof(Storage)!=="undefined") {
+            var testObject = {
+                'name': "Coffee and Read",
+                'latitude': 6.865880726261442,
+                'longitude': 79.8626028877585
+            };
+
+            localStorage.setItem('eventItem', JSON.stringify(testObject));
+        }
+    });
+
+    $(document).on('click', '.bookLaunch', function(){
+        if(typeof(Storage)!=="undefined") {
+            var testObject = {
+                'name': "Book Launch",
+                'latitude': 6.8542116966617925,
+                'longitude': 79.8796662528
+            };
+
+            localStorage.setItem('eventItem', JSON.stringify(testObject));
+        }
+    });
+
+    $(document).on('click', '.childrenParty', function(){
+        if(typeof(Storage)!=="undefined") {
+            var testObject = {
+                'name': "Children Party",
+                'latitude': 6.781853811708403,
+                'longitude': 79.91363893795074
+            };
+
+            localStorage.setItem('eventItem', JSON.stringify(testObject));
+        }
+    });
+</script>

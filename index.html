@@ -14,6 +14,8 @@
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="https://checkout.stripe.com/checkout.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="https://raw.github.com/HPNeo/gmaps/master/gmaps.js"></script>
 </head>
 
 <style>
@@ -114,6 +116,7 @@
 
 <div data-role="page" id="page4" data-theme="e" class="full-height">
     <div nav-type="side-nav"></div>
+    <a href="#page11"></a>
     <div data-role="main" class="ui-content container" id="events"></div>
     <div nav-type="main-nav"></div>
 </div>
@@ -160,6 +163,12 @@
     <div nav-type="main-nav"></div>
 </div>
 
+<div data-role="page" id="page11" data-theme="e" class="full-height" data-url="map-page">
+    <div nav-type="side-nav"></div>
+    <h1 id="mapTitle" class="h-middle"></h1>
+    <div data-role="main" class="ui-content container" id="map-canvas" style="height: 72%"></div>
+    <div nav-type="main-nav"></div>
+</div>
 <script>
 
     $('[data-role=page]').on('pageshow', function (event, ui) {
@@ -241,8 +250,53 @@
         });
     });
 
+//    $('[data-role=page]').on('pageshow', function (event, ui) {
+//        $("#" + event.target.id).find("#find-on-maps").load("pages/find-on-maps.html", function () {
+//            $("#" + event.target.id).find("[data-role=navbar]").navbar();
+//        });
+//    });
+
     $(function () {
         $("#nav-popup").enhanceWithin().popup();
+    });
+
+    /*
+     * Google Maps documentation: http://code.google.com/apis/maps/documentation/javascript/basics.html
+     * Geolocation documentation: http://dev.w3.org/geo/api/spec-source.html
+     */
+
+    $( document ).on( "pageshow", "#page11", function() {
+        $("#mapTitle").text(JSON.parse(localStorage.getItem('eventItem')).name);
+        var eventDetails = JSON.parse(localStorage.getItem('eventItem'));
+        var defaultLatLng = new google.maps.LatLng(34.0983425, -118.3267434);  // Default to Hollywood, CA when no geolocation support
+//        if ( navigator.geolocation ) {
+//            function success(pos) {
+//                // Location found, show map with these coordinates
+//                drawMap(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
+//            }
+//            function fail(error) {
+//                drawMap(defaultLatLng);  // Failed to find location, show default map
+//            }
+//            // Find the users current position.  Cache the location for 5 minutes, timeout after 6 seconds
+//            navigator.geolocation.getCurrentPosition(success, fail, {maximumAge: 500000, enableHighAccuracy:true, timeout: 6000});
+//        } else {
+//            drawMap(defaultLatLng);  // No geolocation support, show default map
+//        }
+        drawMap(new google.maps.LatLng(parseFloat(eventDetails.latitude), parseFloat(eventDetails.longitude)));
+        function drawMap(latlng) {
+            var myOptions = {
+                zoom: 10,
+                center: latlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("map-canvas"), myOptions);
+            // Add an overlay to the map of current lat/lng
+            var marker = new google.maps.Marker({
+                position: latlng,
+                map: map,
+                title: "Greetings!"
+            });
+        }
     });
 </script>
 </body>
