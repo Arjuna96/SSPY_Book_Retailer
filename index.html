@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css"/>
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -160,6 +161,13 @@
     <div nav-type="main-nav"></div>
 </div>
 
+<div data-role="page" id="page11" data-theme="e" class="full-height">
+    <div nav-type="side-nav"></div>
+
+    <div data-role="main" class="ui-content container" id="book-category"></div>
+    <div nav-type="main-nav"></div>
+</div>
+
 <script>
 
     $('[data-role=page]').on('pageshow', function (event, ui) {
@@ -237,6 +245,12 @@
 
     $('[data-role=page]').on('pageshow', function (event, ui) {
         $("#" + event.target.id).find("#event-details").load("pages/event-details.html", function () {
+            $("#" + event.target.id).find("[data-role=navbar]").navbar();
+        });
+    });
+
+    $('[data-role=page]').on('pageshow', function (event, ui) {
+        $("#" + event.target.id).find("#book-category").load("pages/book-category.html", function () {
             $("#" + event.target.id).find("[data-role=navbar]").navbar();
         });
     });
