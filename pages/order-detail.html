@@ -5,7 +5,8 @@
                 <img id="orderItemImage" width="186px">
             </div>
             <div class="layout-col v-top pad-m-l">
-                <div class="bold pad-m-b" id="orderItemName"></div>
+                <div class="bold pad-m-b" id="orderItemName"> </div>
+                <div class="pad-m-b"> <span class="glyphicon glyphicon-heart" style="color: red" id="addFav"></span></div>
                 <div class="pad-m-b">Dan Browns</div>
                 <div class="price-label h-middle">USD <span class="price-val"></span></div>
                 <div data-role="navbar">
@@ -106,6 +107,29 @@
             var id = $(this).parent().attr("id");
             $("#" + id + " .vote").text($(this).data("vote"));
 
+        });
+
+        var favList = [];
+
+        if(JSON.parse(localStorage.getItem('favDetail')) != null){
+            if(JSON.parse(localStorage.getItem('favDetail')).length != 0){
+                favList = JSON.parse(localStorage.getItem('favDetail'));
+            }
+        }
+
+        $('#addFav').on('click', function (e) {
+            // store fav data
+            if(typeof(Storage)!=="undefined") {
+                var favObject = {
+                    'name': JSON.parse(localStorage.getItem('orderDetail')).name,
+                    'imageName': JSON.parse(localStorage.getItem('orderDetail')).imageName
+                };
+
+                favList.push(favObject);
+                // favList[JSON.parse(localStorage.getItem('favDetail')).length] = (favObject);
+
+                localStorage.setItem('favDetail', JSON.stringify(favList));
+            }
         });
 
         var orderDetail = JSON.parse(localStorage.getItem('orderDetail'));

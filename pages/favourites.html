@@ -2,43 +2,150 @@
     <div class="layout-container full-width">
         <div class="layout-col pad-m-r">
             <div class="layout-container">
-                <div class="layout-col item-css">
-                    <img class="full-width" src="external/images/favorites/image1.jpg">
+                <div class="layout-col">
+                    <!--<img class="full-width" src="external/images/favorites/image1.jpg">-->
+                    <img id="favItemImage0" width="186px">
                 </div>
-                <div class="layout-col v-middle pad-m-l pad-m-r">Atlantic Books</div>
+
+                <div class="layout-col v-middle pad-m-l pad-m-r" id="favItemName0"></div>
                 <div class="layout-col v-middle pad-m-r">
-                    <i class="glyphicon glyphicon-trash"></i>
+                    <i class="glyphicon glyphicon-trash" style="display:none" id="removeFav0"></i>
                 </div>
             </div>
-            <div class="layout-container mgn-l-t">
-                <div class="layout-col item-css">
-                    <img class="full-width" src="external/images/favorites/image1.jpg">
-                </div>
-                <div class="layout-col v-middle pad-m-l pad-m-r">Atlantic Books</div>
-                <div class="layout-col v-middle pad-m-r">
-                    <i class="glyphicon glyphicon-trash"></i>
-                </div>
-            </div>
-        </div>
-        <div class="layout-col pad-m-r">
             <div class="layout-container">
-                <div class="layout-col item-css">
-                    <img class="full-width" src="external/images/favorites/image1.jpg">
+                <div class="layout-col">
+                    <!--<img class="full-width" src="external/images/favorites/image1.jpg">-->
+                    <img id="favItemImage2" width="186px">
                 </div>
-                <div class="layout-col v-middle pad-m-l pad-m-r">Atlantic Books</div>
+
+                <div class="layout-col v-middle pad-m-l pad-m-r" id="favItemName2"></div>
                 <div class="layout-col v-middle pad-m-r">
-                    <i class="glyphicon glyphicon-trash"></i>
+                    <i class="glyphicon glyphicon-trash" style="display:none" id="removeFav2"></i>
                 </div>
             </div>
-            <div class="layout-container mgn-l-t">
-                <div class="layout-col item-css">
-                    <img class="full-width" src="external/images/favorites/image1.jpg">
+            <div class="layout-container">
+                <div class="layout-col">
+                    <!--<img class="full-width" src="external/images/favorites/image1.jpg">-->
+                    <img id="favItemImage1" width="186px">
                 </div>
-                <div class="layout-col v-middle pad-m-l pad-m-r">Atlantic Books</div>
+
+                <div class="layout-col v-middle pad-m-l pad-m-r" id="favItemName1"></div>
                 <div class="layout-col v-middle pad-m-r">
-                    <i class="glyphicon glyphicon-trash"></i>
+                    <i class="glyphicon glyphicon-trash" style="display:none" id="removeFav1"></i>
+                </div>
+            </div>
+            <div class="layout-container">
+                <div class="layout-col">
+                    <!--<img class="full-width" src="external/images/favorites/image1.jpg">-->
+                    <img id="favItemImage3" width="186px">
+                </div>
+
+                <div class="layout-col v-middle pad-m-l pad-m-r" id="favItemName3"></div>
+                <div class="layout-col v-middle pad-m-r">
+                    <i class="glyphicon glyphicon-trash" style="display:none" id="removeFav3"></i>
+                </div>
+            </div>
+            <div class="layout-container">
+                <div class="layout-col">
+                    <!--<img class="full-width" src="external/images/favorites/image1.jpg">-->
+                    <img id="favItemImage4" width="186px">
+                </div>
+
+                <div class="layout-col v-middle pad-m-l pad-m-r" id="favItemName4"></div>
+                <div class="layout-col v-middle pad-m-r">
+                    <i class="glyphicon glyphicon-trash" style="display:none" id="removeFav4"></i>
                 </div>
             </div>
         </div>
+
     </div>
 </div>
+
+<script>
+    for (var i = 0; i < JSON.parse(localStorage.getItem('favDetail')).length; i++) {
+        $("#favItemImage" + i).attr("src", "external/images/home/" + JSON.parse(localStorage.getItem('favDetail'))[i].imageName);
+        $("#favItemName" + i).text(JSON.parse(localStorage.getItem('favDetail'))[i].name);
+        // $("#removeFav"+i).text("removeFav"+i);
+        $("#removeFav" + i).css("display", "block");
+
+    }
+
+
+    var favList = [];
+
+    //remove 1st in fav
+    $('#removeFav0').on('click', function (e) {
+        // remove fav data
+        if (typeof(Storage) !== "undefined") {
+            // favList[JSON.parse(localStorage.getItem('favDetail')).length] = (favObject);
+
+            favList = JSON.parse(localStorage.getItem('favDetail'));
+            favList.splice(0, 1);
+            localStorage.setItem('favDetail', JSON.stringify(favList));
+
+            window.location.reload();
+            // localStorage.removeItem('favDetail');
+        }
+    });
+
+    //remove 2nd in fav
+    $('#removeFav1').on('click', function (e) {
+        // remove fav data
+        if (typeof(Storage) !== "undefined") {
+            // favList[JSON.parse(localStorage.getItem('favDetail')).length] = (favObject);
+
+            favList = JSON.parse(localStorage.getItem('favDetail'));
+            favList.splice(1, 1);
+            localStorage.setItem('favDetail', JSON.stringify(favList));
+
+            window.location.reload();
+            // localStorage.removeItem('favDetail');
+        }
+    });
+
+    //remove 3rd in fav
+    $('#removeFav2').on('click', function (e) {
+        // remove fav data
+        if (typeof(Storage) !== "undefined") {
+            // favList[JSON.parse(localStorage.getItem('favDetail')).length] = (favObject);
+
+            favList = JSON.parse(localStorage.getItem('favDetail'));
+            favList.splice(2, 1);
+            localStorage.setItem('favDetail', JSON.stringify(favList));
+
+            window.location.reload();
+            // localStorage.removeItem('favDetail');
+        }
+    });
+
+    //remove 4th in fav
+    $('#removeFav3').on('click', function (e) {
+        // remove fav data
+        if (typeof(Storage) !== "undefined") {
+            // favList[JSON.parse(localStorage.getItem('favDetail')).length] = (favObject);
+
+            favList = JSON.parse(localStorage.getItem('favDetail'));
+            favList.splice(3, 1);
+            localStorage.setItem('favDetail', JSON.stringify(favList));
+
+            window.location.reload();
+            // localStorage.removeItem('favDetail');
+        }
+    });
+
+    //remove 5th in fav
+    $('#removeFav4').on('click', function (e) {
+        // remove fav data
+        if (typeof(Storage) !== "undefined") {
+            // favList[JSON.parse(localStorage.getItem('favDetail')).length] = (favObject);
+
+            favList = JSON.parse(localStorage.getItem('favDetail'));
+            favList.splice(4, 1);
+            localStorage.setItem('favDetail', JSON.stringify(favList));
+
+            window.location.reload();
+            // localStorage.removeItem('favDetail');
+        }
+    });
+
+</script>
