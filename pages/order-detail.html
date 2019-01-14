@@ -25,12 +25,12 @@
             <div class="" id="orderItemDescription"></div>
         </div>
         <div class="layout-container pad-m-t full-width">
-            <div class="layout-col circle">
-                <a id="qtyIncrementer"><i class="glyphicon glyphicon-plus icon-plus"></i></a>
-            </div>
-            <div class=" h-middle"><input id="qtyVal" type="text" disabled class="h-middle layout-col" value=1></div>
             <div class="layout-col h-right circle">
                 <a id="qtyDecrementor"><i class="glyphicon glyphicon-minus icon-minus"></i></a>
+            </div>
+            <div class=" h-middle"><input id="qtyVal" type="text" disabled class="h-middle layout-col" value=1></div>
+            <div class="layout-col circle">
+                <a id="qtyIncrementer"><i class="glyphicon glyphicon-plus icon-plus"></i></a>
             </div>
         </div>
         <div class="layout-container pad-m-t full-width">
@@ -38,7 +38,7 @@
         </div>
         <div class="layout-container pad-m-t full-width">
             <div class="layout-col">Amount</div>
-            <div class="layout-col h-right"><span class="pad-m-r">USD</span><span class="price-val"></span></div>
+            <div class="layout-col h-right"><span class="pad-m-r">USD</span><span class="total-price"></span></div>
         </div>
         <div class="layout-container pad-m-t full-width event-tabs">
             <div class="layout-col h-middle v-middle primary-btn-css" id="booking"><span>Book Now For $</span><span class="pad-m-l total-price"></span></div>
@@ -108,10 +108,12 @@
 
         });
 
-        $("#orderItemName").text(JSON.parse(localStorage.getItem('orderDetail')).name);
-        $("#orderItemDescription").text(JSON.parse(localStorage.getItem('orderDetail')).description);
-        $("#orderItemImage").attr("src", "external/images/home/"+ JSON.parse(localStorage.getItem('orderDetail')).imageName);
-        $(".price-val").text(JSON.parse(localStorage.getItem('orderDetail')).price);
-        $(".total-price").text(JSON.parse(localStorage.getItem('orderDetail')).price * parseInt($('#qtyVal').val()));
+        var orderDetail = JSON.parse(localStorage.getItem('orderDetail'));
+
+        $("#orderItemName").text(orderDetail.name);
+        $("#orderItemDescription").text(orderDetail.description);
+        $("#orderItemImage").attr("src", "external/images/home/"+ orderDetail.imageName);
+        $(".price-val").text(orderDetail.price);
+        $(".total-price").text(orderDetail.price * parseInt($('#qtyVal').val()));
     })
 </script>
