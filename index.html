@@ -67,31 +67,31 @@
             <i class="glyphicon glyphicon-calendar pad-m-r"></i>
             Events</a>
         </div>
-        <div class="mgn-l-t"><a href="#page10">
+        <div class="mgn-l-t" id="nearByEvents"><a href="#page10">
             <i class="glyphicon glyphicon-map-marker pad-m-r"></i>
             Near By Events</a>
         </div>
-        <div class="mgn-l-t"><a href="#page5">
+        <div class="mgn-l-t" id="myCart"><a href="#page5">
             <i class="glyphicon glyphicon-shopping-cart pad-m-r"></i>
             My Cart</a>
         </div>
-        <div class="mgn-l-t"><a href="#page6">
+        <div class="mgn-l-t" id="scanQR"><a href="#page6">
             <i class="glyphicon glyphicon-star pad-m-r"></i>
             Scan QR & My Loyalty</a>
         </div>
-        <div class="mgn-l-t"><a href="#page7">
+        <div class="mgn-l-t" id="aboutUS"><a href="#page7">
             <i class="glyphicon glyphicon-info-sign pad-m-r"></i>
             About Us</a>
         </div>
-        <div class="mgn-l-t"><a href="#page8">
+        <div class="mgn-l-t"><a id="teamMember" href="#page8">
             <i class="glyphicon glyphicon-education pad-m-r"></i>
             Team</a>
         </div>
-        <div class="mgn-l-t"><a href="#page16">
+        <div class="mgn-l-t" id="exportFavourites"><a href="#page16">
             <i class="glyphicon glyphicon-envelope pad-m-r"></i>
             Export Favourites</a>
         </div>
-        <div class="mgn-l-t"><a href="#page17">
+        <div class="mgn-l-t" id="newsBind"><a href="#page17">
             <i class="glyphicon glyphicon-bullhorn pad-m-r"></i>
             News</a>
         </div>
@@ -270,7 +270,14 @@
 
 
     $('[data-role=page]').on('pageinit', function (event, ui) {
-        $("#" + event.target.id).find("[nav-type=side-nav]").load("side-navigation.html", function () {
+        var naviElem = JSON.parse(localStorage.getItem('navigationElem'));
+        var page = "side-navigation.html";
+
+        if (naviElem && naviElem.isBack) {
+            page = "side-navigation-back.html"
+        }
+
+        $("#" + event.target.id).find("[nav-type=side-nav]").load(page, function () {
             $("#" + event.target.id).find("[data-role=navbar]").navbar();
             $("#side-nav-pop").show().trigger("updatelayout");
         });
@@ -414,6 +421,76 @@
             });
         }
     });
+
+    $('#nearByEvents').on('click', function (e) {
+        if(typeof(Storage)!=="undefined") {
+            var favObject = {
+                'isBack': true
+            };
+
+            localStorage.setItem('navigationElem', JSON.stringify(favObject));
+        }
+    });
+
+    $('#teamMember').on('click', function (e) {
+        if(typeof(Storage)!=="undefined") {
+            var favObject = {
+                'isBack': true
+            };
+
+            localStorage.setItem('navigationElem', JSON.stringify(favObject));
+        }
+    });
+
+    $('#myCart').on('click', function (e) {
+        if(typeof(Storage)!=="undefined") {
+            var favObject = {
+                'isBack': true
+            };
+
+            localStorage.setItem('navigationElem', JSON.stringify(favObject));
+        }
+    });
+
+    $('#scanQR').on('click', function (e) {
+        if(typeof(Storage)!=="undefined") {
+            var favObject = {
+                'isBack': true
+            };
+
+            localStorage.setItem('navigationElem', JSON.stringify(favObject));
+        }
+    });
+
+    $('#aboutUS').on('click', function (e) {
+        if(typeof(Storage)!=="undefined") {
+            var favObject = {
+                'isBack': true
+            };
+
+            localStorage.setItem('navigationElem', JSON.stringify(favObject));
+        }
+    });
+
+    $('#exportFavourites').on('click', function (e) {
+        if(typeof(Storage)!=="undefined") {
+            var favObject = {
+                'isBack': true
+            };
+
+            localStorage.setItem('navigationElem', JSON.stringify(favObject));
+        }
+    });
+
+    $('#newsBind').on('click', function (e) {
+        if(typeof(Storage)!=="undefined") {
+            var favObject = {
+                'isBack': true
+            };
+
+            localStorage.setItem('navigationElem', JSON.stringify(favObject));
+        }
+    })
 </script>
 </body>
 </html>

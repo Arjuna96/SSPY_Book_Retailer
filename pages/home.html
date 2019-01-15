@@ -181,4 +181,21 @@
         // Change page
 //        $.mobile.changePage("#page9");
     });
+
+    if(typeof(Storage)!=="undefined") {
+        var testObject = {
+            'currentParentName': "home",
+            'currentParentId': "page1"
+        };
+
+        localStorage.setItem('widgetNavigation', JSON.stringify(testObject));
+    }
+
+    if(typeof(Storage)!=="undefined") {
+        var favObject = {
+            'isBack': false
+        };
+
+        localStorage.setItem('navigationElem', JSON.stringify(favObject));
+    }
 </script>

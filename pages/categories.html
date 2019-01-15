@@ -83,3 +83,22 @@
         </div>
     </div>
 </div>
+
+<script>
+    if(typeof(Storage)!=="undefined") {
+        var testObject = {
+            'currentParentName': "Categories",
+            'currentParentId': "page2"
+        };
+
+        localStorage.setItem('widgetNavigation', JSON.stringify(testObject));
+    }
+
+    if(typeof(Storage)!=="undefined") {
+        var favObject = {
+            'isBack': false
+        };
+
+        localStorage.setItem('navigationElem', JSON.stringify(favObject));
+    }
+</script>
