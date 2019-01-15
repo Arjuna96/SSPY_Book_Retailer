@@ -9,15 +9,20 @@
                 <div class="pad-m-b"><a href="#page3"> <span class="glyphicon glyphicon-heart" style="color: red" id="addFav"></span></a></div>
                 <div class="pad-m-b">Dan Browns</div>
                 <div class="price-label h-middle">USD <span class="price-val"></span></div>
-                <div data-role="navbar">
-                    <div class="rating" id="first">
-                        <a href="#" data-role="button" data-inline="true" data-icon="star" data-vote="1" data-iconpos="notext" class="inline-block"></a>
-                        <a href="#" data-role="button" data-inline="true" data-icon="star" data-vote="2" data-iconpos="notext" class="inline-block"></a>
-                        <a href="#" data-role="button" data-inline="true" data-icon="star" data-vote="3" data-iconpos="notext" class="inline-block"></a>
-                        <a href="#" data-role="button" data-inline="true" data-icon="star" data-vote="4" data-iconpos="notext" class="inline-block"></a>
-                        <a href="#" data-role="button" data-inline="true" data-icon="star" data-vote="5" data-iconpos="notext" class="inline-block"></a>
+                <div data-role="button">
+                    <div class="rating pad-m-t" id="first">
+                        <a><i class="glyphicon glyphicon-star"></i></a>
+                        <a><i class="glyphicon glyphicon-star"></i></a>
+                        <a><i class="glyphicon glyphicon-star"></i></a>
+                        <a><i class="glyphicon glyphicon-star"></i></a>
+                        <a><i class="glyphicon glyphicon-star"></i></a>
+                        <!--<a href="#" data-inline="true" data-icon="star" data-vote="1" data-iconpos="notext" class="inline-block"></a>-->
+                        <!--<a href="#" data-inline="true" data-icon="star" data-vote="2" data-iconpos="notext" class="inline-block"></a>-->
+                        <!--<a href="#" data-inline="true" data-icon="star" data-vote="3" data-iconpos="notext" class="inline-block"></a>-->
+                        <!--<a href="#" data-inline="true" data-icon="star" data-vote="4" data-iconpos="notext" class="inline-block"></a>-->
+                        <!--<a href="#" data-inline="true" data-icon="star" data-vote="5" data-iconpos="notext" class="inline-block"></a>-->
                         <div>Ratings</div>
-                        <b><div class="vote"></div></b>
+                        <div class="vote bold"></div>
                     </div>
                 </div>
             </div>
@@ -29,7 +34,7 @@
             <div class="layout-col h-right circle">
                 <a id="qtyDecrementor"><i class="glyphicon glyphicon-minus icon-minus"></i></a>
             </div>
-            <div class=" h-middle"><input id="qtyVal" type="text" disabled class="h-middle layout-col" value=1></div>
+            <div class=" h-middle"><input id="qtyVal" type="text" disabled class="h-middle layout-col txt-area" value=1></div>
             <div class="layout-col circle">
                 <a id="qtyIncrementer"><i class="glyphicon glyphicon-plus icon-plus"></i></a>
             </div>

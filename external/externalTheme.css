@@ -201,7 +201,7 @@
 }
 
 .rated {
-    background-color: yellow !important;
+    color: #fed702 !important;
 }
 
 .rating a {
@@ -315,7 +315,7 @@
 }
 
 .checked {
-    color: orange;
+    color: #fed702;
 }
 
 @media only screen and (max-width: 600px){
@@ -329,4 +329,9 @@
         /*margin: auto;*/
     /*}*/
 
+}
+
+.txt-area {
+    background: transparent;
+    border: none;
 }
