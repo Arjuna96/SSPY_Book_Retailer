@@ -1,0 +1,38 @@
+<div>Via Email</div>
+<form  action="https://formspree.io/bookshelfssyp@gmail.com" method="POST" id="contact-form">
+    <!--<input type="text" name="name">-->
+    <!--<input type="email" name="_replyto">-->
+    <!--<input type="submit" value="Send">-->
+    <input id="name" type="text" name="Name" placeholder="Name" required style="visibility: hidden">
+    <!--<input id="email" type="email" name="Email" placeholder="Email" required>-->
+    <textarea id="messageContent" name="Message" cols="30" rows="6" placeholder="Message" required style="visibility: hidden"></textarea>
+    <!-- CONFIG -->
+    <!--<input class="is-hidden" type="text" name="_gotcha">-->
+    <!--<input type="hidden" name="_subject" placeholder="Subject" value="Subject">-->
+    <!--<input type="hidden" name="_cc" value="email@cc.com">-->
+    <!-- /CONFIG -->
+    <input id="submitBtn" class="submit" type="submit" value="Send">
+</form>
+
+<script>
+    $("#submitBtn").click(function () {
+        var favDetail = JSON.parse(localStorage.getItem('favDetail'));
+        var msg = "Your Favourites" +
+                "";
+
+        for (var i=0; i<favDetail.length; i++) {
+            if (i == 0) {
+                msg = msg + "        " +favDetail[i].name;
+            } else {
+                msg = msg + "," + favDetail[i].name;
+            }
+        }
+
+        $("#name").val("The Book Shelf");
+//    $("#email").val("subodha555@gmail.com");
+        $("#messageContent").val(msg);
+
+//        alert(msg);
+    });
+
+</script>
