@@ -5,9 +5,9 @@
                 <div class="layout-col item-css">
                     <img class="full-width" src="external/images/favorites/image4.jpg">
                 </div>
-                <div class="layout-col v-middle pad-m-l pad-m-r">Atlantic Books</div>
+                <div class="layout-col v-middle pad-m-l pad-m-r">Dutton Books</div>
                 <div class="layout-col v-middle pad-m-r">
-                    <a href="#page3"> <span class="glyphicon glyphicon-heart" style="color: red" id="addFav1"></span></a>
+                    <a href="#page3"> <span class="glyphicon glyphicon-heart addFavDu" style="color: red"></span></a>
                 </div>
             </div>
             <div class="layout-container mgn-l-t">
@@ -16,7 +16,7 @@
                 </div>
                 <div class="layout-col v-middle pad-m-l pad-m-r">Atlantic Books</div>
                 <div class="layout-col v-middle pad-m-r">
-                    <a href="#page3"> <span class="glyphicon glyphicon-heart" style="color: red" id="addFav2"></span></a>
+                    <a href="#page3"> <span class="glyphicon glyphicon-heart addFav" style="color: red"></span></a>
                 </div>
             </div>
         </div>
@@ -27,7 +27,7 @@
                 </div>
                 <div class="layout-col v-middle pad-m-l pad-m-r">Atlantic Books</div>
                 <div class="layout-col v-middle pad-m-r">
-                    <a href="#page3"> <span class="glyphicon glyphicon-heart" style="color: red" id="addFav3"></span></a>
+                    <a href="#page3"> <span class="glyphicon glyphicon-heart addFav" style="color: red" ></span></a>
                 </div>
             </div>
             <div class="layout-container mgn-l-t">
@@ -36,9 +36,52 @@
                 </div>
                 <div class="layout-col v-middle pad-m-l pad-m-r">Atlantic Books</div>
                 <div class="layout-col v-middle pad-m-r">
-                    <a href="#page3"> <span class="glyphicon glyphicon-heart" style="color: red" id="addFav4"></span></a>
+                    <a href="#page3"> <span class="glyphicon glyphicon-heart addFav" style="color: red"></span></a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+<script>
+    var bookFavList = [];
+
+    if (JSON.parse(localStorage.getItem('favDetail')) != null) {
+        if (JSON.parse(localStorage.getItem('favDetail')).length != 0) {
+            bookFavList = JSON.parse(localStorage.getItem('favDetail'));
+            alert(bookFavList[0].name);
+        }
+    }
+
+    $(document).on('click', '.addFavDu', function () {
+        // store some data
+        if (typeof(Storage) !== "undefined") {
+            var favObject = {
+                'name': "Dutton Books",
+                'imageName': "dutton.png"
+            };
+
+            bookFavList.push(favObject);
+            alert(JSON.stringify(favObject));
+            localStorage.setItem('favDetail', JSON.stringify(bookFavList));
+        }
+
+    });
+    $(document).on('click', '.addFav', function () {
+        // store some data
+        if (typeof(Storage) !== "undefined") {
+            var favObject = {
+                'name': "Dutton Books",
+                'imageName': "dutton.png"
+            };
+
+            bookFavList.push(favObject);
+            alert(JSON.stringify(favObject));
+            localStorage.setItem('favDetail', JSON.stringify(bookFavList));
+        }
+
+    });
+
+
+</script>
