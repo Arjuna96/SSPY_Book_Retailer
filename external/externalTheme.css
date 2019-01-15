@@ -26,6 +26,12 @@
     width: 50%;
 }
 
+.ui-body-e{
+    background-color: #fff !important;
+}
+#nav-popup-popup a{
+    color: #030b4a;
+}
 .nav-logo {
     width: 40%;
 }
