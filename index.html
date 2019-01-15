@@ -270,17 +270,19 @@
 
 
     $('[data-role=page]').on('pageinit', function (event, ui) {
-        var naviElem = JSON.parse(localStorage.getItem('navigationElem'));
-        var page = "side-navigation.html";
+        setTimeout(function () {
+            var naviElem = JSON.parse(localStorage.getItem('navigationElem'));
+            var page = "side-navigation.html";
 
-        if (naviElem && naviElem.isBack) {
-            page = "side-navigation-back.html"
-        }
+            if (naviElem && naviElem.isBack) {
+                page = "side-navigation-back.html"
+            }
 
-        $("#" + event.target.id).find("[nav-type=side-nav]").load(page, function () {
-            $("#" + event.target.id).find("[data-role=navbar]").navbar();
-            $("#side-nav-pop").show().trigger("updatelayout");
-        });
+            $("#" + event.target.id).find("[nav-type=side-nav]").load(page, function () {
+                $("#" + event.target.id).find("[data-role=navbar]").navbar();
+                $("#side-nav-pop").show().trigger("updatelayout");
+            });
+        }, 150);
     });
 
     $('[data-role=page]').on('pageshow', function (event, ui) {
