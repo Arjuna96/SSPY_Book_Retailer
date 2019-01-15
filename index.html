@@ -104,7 +104,7 @@
 
 <div data-role="page" id="page1" data-theme="e" class="full-height">
     <div nav-type="side-nav"></div>
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 100%; height: 220px">
+    <div id="myCarousel" class="carousel slide slider-height" data-ride="carousel" style="width: 100%; height: 220px">
         <!-- Indicators -->
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -116,19 +116,19 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
-                <img src="external/images/events/e1.jpg" style="width: 100%; height: 220px" alt="event 3">
+                <img src="external/images/events/e1.jpg" style="width: 100%; height: 220px" alt="event 3" class="slide slider-height">
             </div>
 
             <div class="item">
-                <img src="external/images/events/e2.jpg" style="width: 100%; height: 220px" alt="Event 2">
+                <img src="external/images/events/e2.jpg" style="width: 100%; height: 220px" alt="Event 2" class="slide slider-height">
             </div>
 
             <div class="item">
-                <img src="external/images/events/e3.jpg" style="width: 100%; height: 220px" alt="event 1">
+                <img src="external/images/events/e3.jpg" style="width: 100%; height: 220px" alt="event 1" class="slide slider-height">
             </div>
 
             <div class="item">
-                <img src="external/images/events/e4.jpg" style="width: 100%; height: 220px" alt="event 1">
+                <img src="external/images/events/e4.jpg" style="width: 100%; height: 220px" alt="event 1" class="slide slider-height">
             </div>
         </div>
 
@@ -142,7 +142,7 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-    <div data-role="main" class="ui-content" style="height: calc(100% - 339px);" id="home"></div>
+    <div data-role="main" class="ui-content slider-content" style="height: calc(100% - 339px);" id="home"></div>
     <div nav-type="main-nav"></div>
 </div>
 
@@ -490,7 +490,19 @@
 
             localStorage.setItem('navigationElem', JSON.stringify(favObject));
         }
-    })
+    });
+
+    $( window ).on( "orientationchange", function( event ) {
+//        alert("This device is in " + event.orientation + " mode!" );
+        if(event.orientation == 'landscape') {
+//            alert("landscape");
+            $(".slider-height").height(100);
+            $(".slider-content").height("calc(100% - 219px)");
+        } else {
+            $(".slider-height").height(220);
+            $(".slider-content").height("calc(100% - 339px)");
+        }
+    });
 </script>
 </body>
 </html>
