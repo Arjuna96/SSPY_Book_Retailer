@@ -1,0 +1,91 @@
+<div>
+    <div class="layout-container full-width">
+        <div class="layout-container event-container-css full-width">
+            <div class="layout-container full-width">
+                <div class="layout-col event-item v-middle">
+                    <img class="full-width" src="external/images/news/n1.jpg">
+                </div>
+                <div class="layout-col v-top pad-m-l">
+                    <div class="layout-container">Scottish poet scoops Costa prize</div>
+                    <div class="layout-container">The Borders-based writer says the local landscape keeps "creeping into" his work at any opportunity.</div>
+                    <div class="layout-container full-width">
+                        <a href="https://www.bbc.com/news/uk-scotland-south-scotland-46793926?intlink_from_url=https://www.bbc.com/news/topics/cq23pdgvyn7t/books&link_location=live-reporting-story"><button class="layout-col">Find more...</button></a>
+                        <div class="layout-col h-right">
+                            <a href="#page14"> <span class="glyphicon glyphicon-heart" style="color: red" id="addFav"></span></a>                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layout-container event-container-css full-width">
+            <div class="layout-container full-width">
+                <div class="layout-col event-item v-middle">
+                    <img class="full-width" src="external/images/news/n2.jpg">
+                </div>
+                <div class="layout-col v-top pad-m-l">
+                    <div class="layout-container">Michelle Obama's book 'most valuable' of 2018</div>
+                    <div class="layout-container">The memoir of the former First Lady helped boost UK Christmas book sales in the UK in 2018, The Bookseller says.</div>
+                    <div class="layout-container full-width">
+                        <a href="https://www.bbc.com/news/entertainment-arts-46759799?intlink_from_url=https://www.bbc.com/news/topics/cq23pdgvyn7t/books&link_location=live-reporting-story"><button class="layout-col">Find more...</button></a>
+                        <div class="layout-col h-right">
+                            <a href="#page14"> <span class="glyphicon glyphicon-heart" style="color: red" id="bookLaunch"></span></a>                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layout-container event-container-css full-width">
+            <div class="layout-container full-width">
+                <div class="layout-col event-item v-middle">
+                    <img class="full-width" src="external/images/news/n3.jpg">
+                </div>
+                <div class="layout-col v-top pad-m-l">
+                    <div class="layout-container">LGBT book shop a 'wonderful success'</div>
+                    <div class="layout-container">The owners of Scotland's first LGBT bookshop in over 20 years say they could not have imagined how successful the shop has been.</div>
+                    <div class="layout-container full-width">
+                        <a href="https://www.bbc.com/news/uk-scotland-glasgow-west-46693996?intlink_from_url=https://www.bbc.com/news/topics/cq23pdgvyn7t/books&link_location=live-reporting-story"><button class="layout-col">Find more...</button></a>
+                        <div class="layout-col h-right">
+                            <a href="#page14"> <span class="glyphicon glyphicon-heart" style="color: red" id="childrenParty"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).on('click', '.coffeeNRead', function(){
+        if(typeof(Storage)!=="undefined") {
+            var testObject = {
+                'name': "Coffee and Read",
+                'latitude': 6.865880726261442,
+                'longitude': 79.8626028877585
+            };
+
+            localStorage.setItem('eventItem', JSON.stringify(testObject));
+        }
+    });
+
+    $(document).on('click', '.bookLaunch', function(){
+        if(typeof(Storage)!=="undefined") {
+            var testObject = {
+                'name': "Book Launch",
+                'latitude': 6.8542116966617925,
+                'longitude': 79.8796662528
+            };
+
+            localStorage.setItem('eventItem', JSON.stringify(testObject));
+        }
+    });
+
+    $(document).on('click', '.childrenParty', function(){
+        if(typeof(Storage)!=="undefined") {
+            var testObject = {
+                'name': "Children Party",
+                'latitude': 6.781853811708403,
+                'longitude': 79.91363893795074
+            };
+
+            localStorage.setItem('eventItem', JSON.stringify(testObject));
+        }
+    });
+</script>

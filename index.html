@@ -91,6 +91,10 @@
             <i class="glyphicon glyphicon-envelope pad-m-r"></i>
             Export Favourites</a>
         </div>
+        <div class="mgn-l-t"><a href="#page17">
+            <i class="glyphicon glyphicon-bullhorn pad-m-r"></i>
+            News</a>
+        </div>
     </div>
 </div>
 
@@ -244,6 +248,13 @@
     <div nav-type="main-nav"></div>
 </div>
 
+<div data-role="page" id="page17" data-theme="e" class="full-height">
+    <div nav-type="side-nav"></div>
+
+    <div data-role="main" class="ui-content container" id="news-items"></div>
+    <div nav-type="main-nav"></div>
+</div>
+
 <script>
 
     $('[data-role=page]').on('pageshow', function (event, ui) {
@@ -351,6 +362,12 @@
 
     $('[data-role=page]').on('pageshow', function (event, ui) {
         $("#" + event.target.id).find("#email").load("pages/email-fav.html", function () {
+            $("#" + event.target.id).find("[data-role=navbar]").navbar();
+        });
+    });
+
+    $('[data-role=page]').on('pageshow', function (event, ui) {
+        $("#" + event.target.id).find("#news-items").load("pages/news-items.html", function () {
             $("#" + event.target.id).find("[data-role=navbar]").navbar();
         });
     });

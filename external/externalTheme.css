@@ -326,6 +326,14 @@
     color: #fed702;
 }
 
+.fav-tab{
+    display: inline;
+}
+
+.fav-tab li{
+    list-style: none;
+}
+
 @media only screen and (max-width: 600px){
     .cat{
         margin-left: 10px;
