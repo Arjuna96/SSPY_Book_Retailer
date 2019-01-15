@@ -114,4 +114,11 @@
             localStorage.setItem('eventItem', JSON.stringify(testObject));
         }
     });
+
+    $(document).ready(function(){
+        $('.event-tab-width').click(function(){
+            $('.event-tab-width').removeClass("active");
+            $(this).addClass("active");
+        });
+    });
 </script>

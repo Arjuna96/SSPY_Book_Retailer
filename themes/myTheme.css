@@ -973,9 +973,9 @@ html .ui-bar-e .ui-btn:active,
 html .ui-body-e .ui-btn:active,
 html body .ui-group-theme-e .ui-btn:active,
 html head + body .ui-btn.ui-btn-e:active {
-	background-color: #030b4a /*{e-bdown-background-color}*/;
-	border-color: #030b4a /*{e-bdown-border}*/;
-	color: #ffd703 /*{e-bdown-color}*/;
+	background-color: #ffd703/*{e-bdown-background-color}*/;
+	border-color: #ffd703 /*{e-bdown-border}*/;
+	color: #030b4a /*{e-bdown-color}*/;
 	text-shadow: 0 /*{e-bdown-shadow-x}*/ 1px /*{e-bdown-shadow-y}*/ 0 /*{e-bdown-shadow-radius}*/ #444444 /*{e-bdown-shadow-color}*/;
 }
 /* Active button */
@@ -1002,9 +1002,9 @@ html .ui-bar-e .ui-slider-track .ui-btn-active,
 html .ui-body-e .ui-slider-track .ui-btn-active,
 html body .ui-group-theme-e .ui-slider-track .ui-btn-active,
 html body div.ui-slider-track.ui-body-e .ui-btn-active {
-	background-color: #030b4a /*{e-active-background-color}*/;
-	border-color: #030b4a /*{e-active-border}*/;
-	color: #ffd703 /*{e-active-color}*/;
+	background-color: #ffd703 /*{e-active-background-color}*/;
+	border-color: #ffd703 /*{e-active-border}*/;
+	color: #030b4a /*{e-active-color}*/;
 	text-shadow: 0 /*{e-active-shadow-x}*/ 1px /*{e-active-shadow-y}*/ 0 /*{e-active-shadow-radius}*/ #005599 /*{e-active-shadow-color}*/;
 }
 /* Active radio button icon */
