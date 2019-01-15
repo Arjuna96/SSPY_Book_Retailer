@@ -1,15 +1,15 @@
 <div data-role="navbar">
     <ul>
-        <li><a href="#page3" >Books</a></li>
-        <li><a href="#page13" >Events</a></li>
-        <li><a href="#page14" >News</a></li>
-        <li><a href="#page15" >Team</a></li>
+        <li><a href="#page3">Books</a></li>
+        <li><a href="#page13">Events</a></li>
+        <li><a href="#page14">News</a></li>
+        <li><a href="#page15">Team</a></li>
     </ul>
 </div>
 
 <div>
     <div class="layout-container full-width pad-m-t">
-        <div class="layout-col pad-m-r" >
+        <div class="layout-col pad-m-r">
             <div class="layout-container">
                 <div class="layout-col">
                     <img class="full-width" style="border-radius: 50%;" id="favItemImage0">
@@ -41,7 +41,7 @@
             </div>
             <div class="layout-container mgn-l-t">
                 <div class="layout-col">
-                    <img class="full-width"  style="border-radius: 50%;" id="favItemImage4">
+                    <img class="full-width" style="border-radius: 50%;" id="favItemImage4">
                 </div>
                 <div class="layout-col v-middle pad-m-l pad-m-r" id="favItemName4"></div>
                 <div class="layout-col v-middle pad-m-r">
@@ -64,12 +64,14 @@
 </div>
 
 <script>
-    for (var i = 0; i < JSON.parse(localStorage.getItem('teamFavDetail')).length; i++) {
-        $("#favItemImage" + i).attr("src", "external/images/team/" + JSON.parse(localStorage.getItem('teamFavDetail'))[i].imageName);
-        $("#favItemName" + i).text(JSON.parse(localStorage.getItem('teamFavDetail'))[i].name);
-        // $("#removeFav"+i).text("removeFav"+i);
-        $("#removeFav" + i).css("display", "block");
+    if (JSON.parse(localStorage.getItem('teamFavDetail'))) {
+        for (var i = 0; i < JSON.parse(localStorage.getItem('teamFavDetail')).length; i++) {
+            $("#favItemImage" + i).attr("src", "external/images/team/" + JSON.parse(localStorage.getItem('teamFavDetail'))[i].imageName);
+            $("#favItemName" + i).text(JSON.parse(localStorage.getItem('teamFavDetail'))[i].name);
+            // $("#removeFav"+i).text("removeFav"+i);
+            $("#removeFav" + i).css("display", "block");
 
+        }
     }
 
 

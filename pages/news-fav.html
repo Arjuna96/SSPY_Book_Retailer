@@ -64,13 +64,18 @@
 </div>
 
 <script>
-    for (var i = 0; i < JSON.parse(localStorage.getItem('newsFavDetail')).length; i++) {
-        $("#favItemImage" + i).attr("src", "external/images/news/" + JSON.parse(localStorage.getItem('newsFavDetail'))[i].imageName);
-        $("#favItemName" + i).text(JSON.parse(localStorage.getItem('newsFavDetail'))[i].title);
-        // $("#removeFav"+i).text("removeFav"+i);
-        $("#removeFav" + i).css("display", "block");
+
+
+    if( JSON.parse(localStorage.getItem('newsFavDetail'))){
+        for (var i = 0; i < JSON.parse(localStorage.getItem('newsFavDetail')).length; i++) {
+            $("#favItemImage" + i).attr("src", "external/images/news/" + JSON.parse(localStorage.getItem('newsFavDetail'))[i].imageName);
+            $("#favItemName" + i).text(JSON.parse(localStorage.getItem('newsFavDetail'))[i].title);
+            // $("#removeFav"+i).text("removeFav"+i);
+            $("#removeFav" + i).css("display", "block");
 //        alert("comes here inside for :" + JSON.parse(localStorage.getItem('newsFavDetail'))[i].title);
+        }
     }
+
 
 
     var favList = [];

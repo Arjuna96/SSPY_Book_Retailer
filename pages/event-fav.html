@@ -64,12 +64,14 @@
 </div>
 
 <script>
-    for (var i = 0; i < JSON.parse(localStorage.getItem('favDetail')).length; i++) {
-        $("#favItemImage" + i).attr("src", "external/images/home/" + JSON.parse(localStorage.getItem('favDetail'))[i].imageName);
-        $("#favItemName" + i).text(JSON.parse(localStorage.getItem('favDetail'))[i].name);
-        // $("#removeFav"+i).text("removeFav"+i);
-        $("#removeFav" + i).css("display", "block");
+    if( JSON.parse(localStorage.getItem('favDetail'))) {
+        for (var i = 0; i < JSON.parse(localStorage.getItem('favDetail')).length; i++) {
+            $("#favItemImage" + i).attr("src", "external/images/home/" + JSON.parse(localStorage.getItem('favDetail'))[i].imageName);
+            $("#favItemName" + i).text(JSON.parse(localStorage.getItem('favDetail'))[i].name);
+            // $("#removeFav"+i).text("removeFav"+i);
+            $("#removeFav" + i).css("display", "block");
 
+        }
     }
 
 
