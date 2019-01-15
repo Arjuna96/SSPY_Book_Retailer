@@ -356,3 +356,9 @@
     background-color: #fed702;
     color: #030b4a;
 }
+
+.input-submit {
+    background-color: #030b4a;
+    color: #ffffff;
+    border: solid 1px #030b4a;
+}
