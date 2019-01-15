@@ -19,21 +19,60 @@
 <script>
     $("#submitBtn").click(function () {
         var favDetail = JSON.parse(localStorage.getItem('favDetail'));
+        var favEventsDetail = JSON.parse(localStorage.getItem('eventsFavDetail'));
+        var favNewsDetail = JSON.parse(localStorage.getItem('newsFavDetail'));
+        var favTeamDetail = JSON.parse(localStorage.getItem('teamFavDetail'));
         var msg = "Your Favourites" +
                 "";
 
-        for (var i=0; i<favDetail.length; i++) {
-            if (i == 0) {
-                msg = msg + "        " +favDetail[i].name;
-            } else {
-                msg = msg + "," + favDetail[i].name;
+        if(favDetail) {
+            for (var i=0; i<favDetail.length; i++) {
+                if (i == 0) {
+                    msg = msg + "   Books    ==>    " +favDetail[i].name;
+                } else {
+                    msg = msg + "," + favDetail[i].name;
+                }
             }
         }
 
-        $("#name").val("The Book Shelf");
-//    $("#email").val("subodha555@gmail.com");
-        $("#messageContent").val(msg);
+        if(favEventsDetail) {
+            for (var i = 0; i < favEventsDetail.length; i++) {
+                if (i == 0) {
+                    msg = msg + "               Events    ==>    " + favEventsDetail[i].title;
+                } else {
+                    msg = msg + "," + favEventsDetail[i].title;
+                }
+            }
+        }
 
+        if(favNewsDetail) {
+            for (var i = 0; i < favNewsDetail.length; i++) {
+                if (i == 0) {
+                    msg = msg + "               News     ==>   " + favNewsDetail[i].title;
+                } else {
+                    msg = msg + "," + favNewsDetail[i].title;
+                }
+            }
+        }
+
+        if(favTeamDetail) {
+            for (var i = 0; i < favTeamDetail.length; i++) {
+                if (i == 0) {
+                    msg = msg + "               Team    ==>    " + favTeamDetail[i].name;
+                } else {
+                    msg = msg + "," + favTeamDetail[i].name;
+                }
+            }
+        }
+
+        if (favDetail || favEventsDetail || favNewsDetail  ||  favTeamDetail) {
+            $("#name").val("The Book Shelf");
+//    $("#email").val("subodha555@gmail.com");
+            $("#messageContent").val(msg);
+//            alert("mesge"+msg);
+        } else {
+            return;
+        }
 //        alert(msg);
     });
 
