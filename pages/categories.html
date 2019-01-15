@@ -101,4 +101,14 @@
 
         localStorage.setItem('navigationElem', JSON.stringify(favObject));
     }
+
+    $('.book').on('click', function (e) {
+        if(typeof(Storage)!=="undefined") {
+            var favObject = {
+                'isBack': true
+            };
+
+            localStorage.setItem('navigationElem', JSON.stringify(favObject));
+        }
+    })
 </script>
