@@ -1,7 +1,8 @@
 <div data-role="navbar">
     <ul>
+        <li><a href="#page3" >Books</a></li>
         <li><a href="#page13" >Events</a></li>
-        <li><a href="#page14" >Newsletter</a></li>
+        <li><a href="#page14" >News</a></li>
         <li><a href="#page15" >Team</a></li>
     </ul>
 </div>
@@ -63,9 +64,9 @@
 </div>
 
 <script>
-    for (var i = 0; i < JSON.parse(localStorage.getItem('favDetail')).length; i++) {
-        $("#favItemImage" + i).attr("src", "external/images/home/" + JSON.parse(localStorage.getItem('favDetail'))[i].imageName);
-        $("#favItemName" + i).text(JSON.parse(localStorage.getItem('favDetail'))[i].name);
+    for (var i = 0; i < JSON.parse(localStorage.getItem('newsFavDetail')).length; i++) {
+        $("#favItemImage" + i).attr("src", "external/images/news/" + JSON.parse(localStorage.getItem('newsFavDetail'))[i].imageName);
+        $("#favItemName" + i).text(JSON.parse(localStorage.getItem('newsFavDetail'))[i].name);
         // $("#removeFav"+i).text("removeFav"+i);
         $("#removeFav" + i).css("display", "block");
 
@@ -78,14 +79,14 @@
     $('#removeFav0').on('click', function (e) {
         // remove fav data
         if (typeof(Storage) !== "undefined") {
-            // favList[JSON.parse(localStorage.getItem('favDetail')).length] = (favObject);
+            // favList[JSON.parse(localStorage.getItem('newsFavDetail')).length] = (favObject);
 
-            favList = JSON.parse(localStorage.getItem('favDetail'));
+            favList = JSON.parse(localStorage.getItem('newsFavDetail'));
             favList.splice(0, 1);
-            localStorage.setItem('favDetail', JSON.stringify(favList));
+            localStorage.setItem('newsFavDetail', JSON.stringify(favList));
 
             window.location.reload();
-            // localStorage.removeItem('favDetail');
+            // localStorage.removeItem('newsFavDetail');
         }
     });
 
@@ -93,14 +94,14 @@
     $('#removeFav1').on('click', function (e) {
         // remove fav data
         if (typeof(Storage) !== "undefined") {
-            // favList[JSON.parse(localStorage.getItem('favDetail')).length] = (favObject);
+            // favList[JSON.parse(localStorage.getItem('newsFavDetail')).length] = (favObject);
 
-            favList = JSON.parse(localStorage.getItem('favDetail'));
+            favList = JSON.parse(localStorage.getItem('newsFavDetail'));
             favList.splice(1, 1);
-            localStorage.setItem('favDetail', JSON.stringify(favList));
+            localStorage.setItem('newsFavDetail', JSON.stringify(favList));
 
             window.location.reload();
-            // localStorage.removeItem('favDetail');
+            // localStorage.removeItem('newsFavDetail');
         }
     });
 
@@ -108,14 +109,14 @@
     $('#removeFav2').on('click', function (e) {
         // remove fav data
         if (typeof(Storage) !== "undefined") {
-            // favList[JSON.parse(localStorage.getItem('favDetail')).length] = (favObject);
+            // favList[JSON.parse(localStorage.getItem('newsFavDetail')).length] = (favObject);
 
-            favList = JSON.parse(localStorage.getItem('favDetail'));
+            favList = JSON.parse(localStorage.getItem('newsFavDetail'));
             favList.splice(2, 1);
-            localStorage.setItem('favDetail', JSON.stringify(favList));
+            localStorage.setItem('newsFavDetail', JSON.stringify(favList));
 
             window.location.reload();
-            // localStorage.removeItem('favDetail');
+            // localStorage.removeItem('newsFavDetail');
         }
     });
 
@@ -123,14 +124,14 @@
     $('#removeFav3').on('click', function (e) {
         // remove fav data
         if (typeof(Storage) !== "undefined") {
-            // favList[JSON.parse(localStorage.getItem('favDetail')).length] = (favObject);
+            // favList[JSON.parse(localStorage.getItem('newsFavDetail')).length] = (favObject);
 
-            favList = JSON.parse(localStorage.getItem('favDetail'));
+            favList = JSON.parse(localStorage.getItem('newsFavDetail'));
             favList.splice(3, 1);
-            localStorage.setItem('favDetail', JSON.stringify(favList));
+            localStorage.setItem('newsFavDetail', JSON.stringify(favList));
 
             window.location.reload();
-            // localStorage.removeItem('favDetail');
+            // localStorage.removeItem('newsFavDetail');
         }
     });
 
@@ -138,14 +139,14 @@
     $('#removeFav4').on('click', function (e) {
         // remove fav data
         if (typeof(Storage) !== "undefined") {
-            // favList[JSON.parse(localStorage.getItem('favDetail')).length] = (favObject);
+            // favList[JSON.parse(localStorage.getItem('newsFavDetail')).length] = (favObject);
 
-            favList = JSON.parse(localStorage.getItem('favDetail'));
+            favList = JSON.parse(localStorage.getItem('newsFavDetail'));
             favList.splice(4, 1);
-            localStorage.setItem('favDetail', JSON.stringify(favList));
+            localStorage.setItem('newsFavDetail', JSON.stringify(favList));
 
             window.location.reload();
-            // localStorage.removeItem('favDetail');
+            // localStorage.removeItem('newsFavDetail');
         }
     });
 
