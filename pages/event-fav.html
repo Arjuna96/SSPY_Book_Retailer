@@ -1,15 +1,15 @@
 <div data-role="navbar">
     <ul>
-        <li><a href="#page3" >Books</a></li>
-        <li><a href="#page13" >Events</a></li>
-        <li><a href="#page14" >News</a></li>
-        <li><a href="#page15" >Team</a></li>
+        <li><a href="#page3">Books</a></li>
+        <li><a href="#page13">Events</a></li>
+        <li><a href="#page14">News</a></li>
+        <li><a href="#page15">Team</a></li>
     </ul>
 </div>
 
 <div>
     <div class="layout-container full-width pad-m-t">
-        <div class="layout-col pad-m-r" >
+        <div class="layout-col pad-m-r">
             <div class="layout-container">
                 <div class="layout-col">
                     <img class="full-width" id="favItemImage0">
@@ -64,7 +64,7 @@
 </div>
 
 <script>
-    if( JSON.parse(localStorage.getItem('favDetail'))) {
+    if (JSON.parse(localStorage.getItem('favDetail'))) {
         for (var i = 0; i < JSON.parse(localStorage.getItem('favDetail')).length; i++) {
             $("#favItemImage" + i).attr("src", "external/images/home/" + JSON.parse(localStorage.getItem('favDetail'))[i].imageName);
             $("#favItemName" + i).text(JSON.parse(localStorage.getItem('favDetail'))[i].name);
@@ -72,6 +72,11 @@
             $("#removeFav" + i).css("display", "block");
 
         }
+
+        var stopReload;
+        if (stopReload != undefined)
+            window.location.reload();
+        stopReload = true;
     }
 
 

@@ -65,6 +65,7 @@
 
 <script>
     if (JSON.parse(localStorage.getItem('teamFavDetail'))) {
+
         for (var i = 0; i < JSON.parse(localStorage.getItem('teamFavDetail')).length; i++) {
             $("#favItemImage" + i).attr("src", "external/images/team/" + JSON.parse(localStorage.getItem('teamFavDetail'))[i].imageName);
             $("#favItemName" + i).text(JSON.parse(localStorage.getItem('teamFavDetail'))[i].name);
@@ -72,6 +73,10 @@
             $("#removeFav" + i).css("display", "block");
 
         }
+        var stopReload;
+        if (stopReload != undefined)
+            window.location.reload();
+        stopReload = true;
     }
 
 
