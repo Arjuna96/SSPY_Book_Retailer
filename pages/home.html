@@ -1,11 +1,12 @@
 <div>
-<div class="layout-container full-width">
-    <div class="layout-container full-width video">
-        <!--<img class="" src="external/images/home/bookFair.jpg">-->
-        <!--<iframe width="100%" height="315" src="https://www.youtube.com/embed/1m20YptiR5A?autoplay=1" frameborder="0" allowfullscreen></iframe>-->
-    </div>
-    <div class="layout-container event-container-css full-width row-margin">
-        <!--<div class="layout-container full-width">-->
+    <h2>&nbsp;Home</h2>
+    <div class="layout-container full-width">
+        <div class="layout-container full-width video">
+            <!--<img class="" src="external/images/home/bookFair.jpg">-->
+            <!--<iframe width="100%" height="315" src="https://www.youtube.com/embed/1m20YptiR5A?autoplay=1" frameborder="0" allowfullscreen></iframe>-->
+        </div>
+        <div class="layout-container event-container-css full-width row-margin">
+            <!--<div class="layout-container full-width">-->
             <div class="layout-container header">Best Sellers</div>
             <div class="layout-container">
                 <div class="layout-col book-row">
@@ -34,10 +35,10 @@
                 </div>
                 <div class="layout-col space"></div>
             </div>
-        <!--</div>-->
-    </div>
-    <div class="layout-container event-container-css full-width row-margin">
-        <!--<div class="layout-container full-width">-->
+            <!--</div>-->
+        </div>
+        <div class="layout-container event-container-css full-width row-margin">
+            <!--<div class="layout-container full-width">-->
             <div class="layout-container header">Popular Near You</div>
             <div class="layout-container">
                 <div class="layout-col book-row">
@@ -65,10 +66,10 @@
                     <div class="descrip">Emi Books</div>
                 </div>
             </div>
-        <!--</div>-->
-    </div>
-    <div class="layout-container event-container-css full-width row-margin">
-        <!--<div class="layout-container full-width">-->
+            <!--</div>-->
+        </div>
+        <div class="layout-container event-container-css full-width row-margin">
+            <!--<div class="layout-container full-width">-->
             <div class="layout-container header">Suggested</div>
             <div class="layout-container">
                 <div class="layout-col book-row">
@@ -96,15 +97,15 @@
                     <div class="descrip">Emi Books</div>
                 </div>
             </div>
-        <!--</div>-->
+            <!--</div>-->
+        </div>
     </div>
-</div>
 </div>
 
 <script>
-    $(document).on('click', '.atlantic', function(){
+    $(document).on('click', '.atlantic', function () {
         // store some data
-        if(typeof(Storage)!=="undefined") {
+        if (typeof(Storage) !== "undefined") {
             var testObject = {
                 'name': "Atlantic Books",
                 'description': "Atlantis Books is written by Dan Browns in 2014 and published in 16th. It s a greater chalenge for them to keep to this standard",
@@ -123,9 +124,9 @@
 //        $.mobile.changePage("#page9");
     });
 
-    $(document).on('click', '.torBooks', function(){
+    $(document).on('click', '.torBooks', function () {
         // store some data
-        if(typeof(Storage)!=="undefined") {
+        if (typeof(Storage) !== "undefined") {
             var testObject = {
                 'name': "Tor Books",
                 'description': "Tor Books is written by Magens Browns in 2014 and published in 16th. It s a greater chalenge for them to keep to this standard",
@@ -144,9 +145,9 @@
 //        $.mobile.changePage("#page9");
     });
 
-    $(document).on('click', '.duttonBooks', function(){
+    $(document).on('click', '.duttonBooks', function () {
         // store some data
-        if(typeof(Storage)!=="undefined") {
+        if (typeof(Storage) !== "undefined") {
             var testObject = {
                 'name': "Dutton Books",
                 'description': "Dutton Books is written by Magens Browns in 2014 and published in 16th. It s a greater chalenge for them to keep to this standard",
@@ -165,9 +166,9 @@
 //        $.mobile.changePage("#page9");
     });
 
-    $(document).on('click', '.luluBooks', function(){
+    $(document).on('click', '.luluBooks', function () {
         // store some data
-        if(typeof(Storage)!=="undefined") {
+        if (typeof(Storage) !== "undefined") {
             var testObject = {
                 'name': "Lulu Books",
                 'description': "LuLU Books is written by Magens Browns in 2014 and published in 16th. It s a greater chalenge for them to keep to this standard",
@@ -186,9 +187,9 @@
 //        $.mobile.changePage("#page9");
     });
 
-    $(document).on('click', '.emiBooks', function(){
+    $(document).on('click', '.emiBooks', function () {
         // store some data
-        if(typeof(Storage)!=="undefined") {
+        if (typeof(Storage) !== "undefined") {
             var testObject = {
                 'name': "Emi Books",
                 'description': "EMI Books is written by Magens Browns in 2014 and published in 16th. It s a greater chalenge for them to keep to this standard",
@@ -207,7 +208,7 @@
 //        $.mobile.changePage("#page9");
     });
 
-    if(typeof(Storage)!=="undefined") {
+    if (typeof(Storage) !== "undefined") {
         var testObject = {
             'currentParentName': "home",
             'currentParentId': "page1"
@@ -216,7 +217,7 @@
         localStorage.setItem('widgetNavigation', JSON.stringify(testObject));
     }
 
-    if(typeof(Storage)!=="undefined") {
+    if (typeof(Storage) !== "undefined") {
         var favObject = {
             'isBack': false
         };
