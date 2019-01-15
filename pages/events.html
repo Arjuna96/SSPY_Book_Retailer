@@ -14,6 +14,7 @@
                             Find more...
                         </div>
                         <div class="layout-col h-right">
+                            <a href="#page13"> <span class="glyphicon glyphicon-heart eventFav1" style="color: red" id="coffeeRead"></span></a>
                             <a href="#page11" class="coffeeNRead"><img class="location-pin" src="external/images/events/location-pin.png"></a>
                         </div>
                     </div>
@@ -39,6 +40,7 @@
                             Find more...
                         </div>
                         <div class="layout-col h-right">
+                            <a href="#page13"> <span class="glyphicon glyphicon-heart eventFav2" style="color: red" id="bookLaunch"></span></a>
                             <a href="#page11" class="bookLaunch"><img class="location-pin" src="external/images/events/location-pin.png"></a>
                         </div>
                     </div>
@@ -64,6 +66,7 @@
                             Find more...
                         </div>
                         <div class="layout-col h-right">
+                            <a href="#page13"> <span class="glyphicon glyphicon-heart eventFav3" style="color: red" id="childrenParty"></span></a>
                             <a href="#page11" class="childrenParty"><img class="location-pin" src="external/images/events/location-pin.png"></a>
                         </div>
                     </div>
@@ -139,4 +142,58 @@
 
         localStorage.setItem('navigationElem', JSON.stringify(favObject));
     }
+
+    var eventsFavList = [];
+
+    if (JSON.parse(localStorage.getItem('eventsFavDetail')) != null) {
+        if (JSON.parse(localStorage.getItem('eventsFavDetail')).length != 0) {
+            eventsFavList = JSON.parse(localStorage.getItem('eventsFavDetail'));
+//            alert(newsFavList[0].name);
+        }
+    }
+
+    $('.eventFav1').on('click', function () {
+        // store some data
+        if (typeof(Storage) !== "undefined") {
+            var favObject = {
+                'title': "Coffee & Read",
+                'shortDesc': "For all book addicts.Read your favourite book with a sip of coffee",
+                'imageName': "event1.jpg"
+            };
+
+            eventsFavList.push(favObject);
+            alert(JSON.stringify(favObject));
+            localStorage.setItem('eventsFavDetail', JSON.stringify(eventsFavList));
+        }
+
+    });
+    $('.eventFav2').on('click', function () {
+        // store some data
+        if (typeof(Storage) !== "undefined") {
+            var favObject = {
+                'title': "Book Launch",
+                'shortDesc': "For all book addicts.Read your favourite book with a sip of coffee",
+                'imageName': "event2.jpg"
+            };
+
+            eventsFavList.push(favObject);
+            alert(JSON.stringify(favObject));
+            localStorage.setItem('eventsFavDetail', JSON.stringify(eventsFavList));
+        }
+
+    });
+    $(".eventFav3").on('click', function () {
+        // store some data
+        if (typeof(Storage) !== "undefined") {
+            var favObject = {
+                'title': "Children Party'",
+                'shortDesc': "For all book addicts.Read your favourite book with a sip of coffee",
+                'imageName': "event3.jpg"
+            };
+            eventsFavList.push(favObject);
+            alert(JSON.stringify(favObject));
+            localStorage.setItem('eventsFavDetail', JSON.stringify(eventsFavList));
+        }
+
+    });
 </script>
