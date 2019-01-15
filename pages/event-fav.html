@@ -76,7 +76,7 @@
     if (JSON.parse(localStorage.getItem('eventsFavDetail'))) {
         for (var i = 0; i < JSON.parse(localStorage.getItem('eventsFavDetail')).length; i++) {
             $("#favItemImage" + i).attr("src", "external/images/events/" + JSON.parse(localStorage.getItem('eventsFavDetail'))[i].imageName);
-            $("#favItemName" + i).text(JSON.parse(localStorage.getItem('eventsFavDetail'))[i].name);
+            $("#favItemName" + i).text(JSON.parse(localStorage.getItem('eventsFavDetail'))[i].title);
             // $("#removeFav"+i).text("removeFav"+i);
             $("#removeFav" + i).css("display", "block");
 
