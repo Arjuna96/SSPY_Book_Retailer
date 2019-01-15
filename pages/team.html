@@ -3,10 +3,12 @@
         <div class="layout-col">
             <img class="full-width" style="border-radius: 50%;" src="external/images/team/suboda.jpg">
         </div>
-        <div class="layout-col v-middle pad-m-l pad-m-r" ><span class="bold" style="font-size: 18px;">&nbsp;Subodha</span>
+        <div class="layout-col v-middle pad-m-l pad-m-r"><span class="bold"
+                                                               style="font-size: 18px;">&nbsp;Subodha</span>
             <br><br>Full Stack Developer & Loves Cricket
             <br><span class="glyphicon glyphicon-envelope">&nbsp;</span><a href="mailto: p.subodha@directfn.com">p.subodha@directfn.com</a>
             <br><span class="glyphicon glyphicon-phone">&nbsp;</span><a href="tel: +94 77 186 1764">+94 77 186 1764</a>
+            <br><a href="#page15"> <span class="glyphicon glyphicon-heart subodha" style="color: red"></span></a>
         </div>
 
     </div>
@@ -14,20 +16,24 @@
         <div class="layout-col">
             <img class="full-width" style="border-radius: 50%;" src="external/images/team/yasa.jpg">
         </div>
-        <div class="layout-col v-middle pad-m-l pad-m-r"><span class="bold" style="font-size: 18px;">&nbsp;Yasadara</span>
+        <div class="layout-col v-middle pad-m-l pad-m-r"><span class="bold"
+                                                               style="font-size: 18px;">&nbsp;Yasadara</span>
             <br><br>UI/UX developer & Loves Music
             <br><span class="glyphicon glyphicon-envelope">&nbsp;</span><a href="mailto: w.yasadara@directfn.com">w.yasadara@directfn.com</a>
             <br><span class="glyphicon glyphicon-phone">&nbsp;</span><a href="tel: +94 77 872 2686">+94 77 872 2686</a>
+            <br><a href="#page15"> <span class="glyphicon glyphicon-heart yasa" style="color: red"></span></a>
         </div>
     </div>
     <div class="layout-container  mgn-l-t">
         <div class="layout-col">
             <img class="full-width" style="border-radius: 50%;" src="external/images/team/pamu.jpg">
         </div>
-        <div class="layout-col v-middle pad-m-l pad-m-r" ><span class="bold" style="font-size: 18px;">&nbsp;Pamuditha</span>
+        <div class="layout-col v-middle pad-m-l pad-m-r"><span class="bold"
+                                                               style="font-size: 18px;">&nbsp;Pamuditha</span>
             <br><br>UI/UX developer & Loves Food
             <br><span class="glyphicon glyphicon-envelope">&nbsp;</span><a href="mailto: l.pamuditha@directfn.com">l.pamuditha@directfn.com</a>
             <br><span class="glyphicon glyphicon-phone">&nbsp;</span><a href="tel: +94 76 524 4065">+94 76 524 4065</a>
+            <br><a href="#page15"> <span class="glyphicon glyphicon-heart pamu" style="color: red"></span></a>
         </div>
     </div>
     <div class="layout-container mgn-l-t">
@@ -38,6 +44,81 @@
             <br><br>Full Stack Developer & Loves Cricket,Soccer
             <br><span class="glyphicon glyphicon-envelope">&nbsp;</span><a href="mailto: s.shanil@directfn.com">s.shanil@directfn.com</a>
             <br><span class="glyphicon glyphicon-phone">&nbsp;</span><a href="tel: +94 77 290 2819">+94 77 290 2819</a>
+            <br><a href="#page15"> <span class="glyphicon glyphicon-heart arjuna" style="color: red"></span></a>
+            <br>
+            <!-- favourites button-->
+            <!--<fieldset data-role="controlgroup" data-type="horizontal">-->
+                <!--<input type="checkbox" name="team1" id="team1" class="custom">-->
+                <!--<label for="team1"><a href="#page15"><span class="glyphicon glyphicon-heart-empty"-->
+                                                           <!--style="color: red"></span></a></label>-->
+            <!--</fieldset>-->
         </div>
     </div>
 </div>
+
+<script>
+    var teamFavList = [];
+
+    if (JSON.parse(localStorage.getItem('teamFavDetail')) != null) {
+        if (JSON.parse(localStorage.getItem('teamFavDetail')).length != 0) {
+            teamFavList = JSON.parse(localStorage.getItem('teamFavDetail'));
+        }
+    }
+
+    $(document).on('click', '.arjuna', function () {
+        // store some data
+        if (typeof(Storage) !== "undefined") {
+            var favObject = {
+                'name': "Arjuna",
+                'imageName': "arjuna.jpg"
+            };
+
+            teamFavList.push(favObject);
+            localStorage.setItem('teamFavDetail', JSON.stringify(teamFavList));
+        }
+
+    });
+
+    $(document).on('click', '.subodha', function () {
+        // store some data
+        if (typeof(Storage) !== "undefined") {
+            var favObject = {
+                'name': "Subodha",
+                'imageName': "suboda.jpg"
+            };
+
+            teamFavList.push(favObject);
+            localStorage.setItem('teamFavDetail', JSON.stringify(teamFavList));
+        }
+
+    });
+
+    $(document).on('click', '.pamu', function () {
+        // store some data
+        if (typeof(Storage) !== "undefined") {
+            var favObject = {
+                'name': "Pamuditha",
+                'imageName': "pamu.jpg"
+            };
+
+            teamFavList.push(favObject);
+            localStorage.setItem('teamFavDetail', JSON.stringify(teamFavList));
+        }
+
+    });
+
+    $(document).on('click', '.yasa', function () {
+        // store some data
+        if (typeof(Storage) !== "undefined") {
+            var favObject = {
+                'name': "Yasadara",
+                'imageName': "yasa.jpg"
+            };
+
+            teamFavList.push(favObject);
+            localStorage.setItem('teamFavDetail', JSON.stringify(teamFavList));
+        }
+
+    });
+
+</script>

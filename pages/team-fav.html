@@ -1,13 +1,15 @@
+<a href="#page3" class="ui-btn ui-btn-inline">Near By Favourites</a>
 <a href="#page13" class="ui-btn ui-btn-inline">Events Favourites</a>
 <a href="#page14" class="ui-btn ui-btn-inline">Newsletter Favourites</a>
-<a href="#page15" class="ui-btn ui-btn-inline">Team Favourites</a>
+
+<br>
 
 <div>
     <div class="layout-container full-width">
         <div class="layout-col pad-m-r" >
             <div class="layout-container">
                 <div class="layout-col">
-                    <img class="full-width" id="favItemImage0">
+                    <img class="full-width" style="border-radius: 50%;" id="favItemImage0">
                 </div>
                 <div class="layout-col v-middle pad-m-l pad-m-r" id="favItemName0"></div>
                 <div class="layout-col v-middle pad-m-r">
@@ -16,7 +18,7 @@
             </div>
             <div class="layout-container mgn-l-t">
                 <div class="layout-col">
-                    <img class="full-width" id="favItemImage2">
+                    <img class="full-width" style="border-radius: 50%;" id="favItemImage2">
                 </div>
                 <div class="layout-col v-middle pad-m-l pad-m-r" id="favItemName2"></div>
                 <div class="layout-col v-middle pad-m-r">
@@ -27,7 +29,7 @@
         <div class="layout-col pad-m-r" id="item2">
             <div class="layout-container">
                 <div class="layout-col">
-                    <img class="full-width" id="favItemImage1">
+                    <img class="full-width" style="border-radius: 50%;" id="favItemImage1">
                 </div>
                 <div class="layout-col v-middle pad-m-l pad-m-r" id="favItemName1"></div>
                 <div class="layout-col v-middle pad-m-r">
@@ -36,18 +38,7 @@
             </div>
             <div class="layout-container mgn-l-t">
                 <div class="layout-col">
-                    <img class="full-width" id="favItemImage3">
-                </div>
-                <div class="layout-col v-middle pad-m-l pad-m-r" id="favItemName3"></div>
-                <div class="layout-col v-middle pad-m-r">
-                    <i style="display:none" id="removeFav3" class="glyphicon glyphicon-trash"></i>
-                </div>
-            </div>
-        </div>
-        <div class="layout-col pad-m-r">
-            <div class="layout-container">
-                <div class="layout-col">
-                    <img class="full-width" id="favItemImage4">
+                    <img class="full-width"  style="border-radius: 50%;" id="favItemImage4">
                 </div>
                 <div class="layout-col v-middle pad-m-l pad-m-r" id="favItemName4"></div>
                 <div class="layout-col v-middle pad-m-r">
@@ -55,13 +46,24 @@
                 </div>
             </div>
         </div>
+        <div class="layout-col pad-m-r">
+            <div class="layout-container">
+                <div class="layout-col">
+                    <img class="full-width" style="border-radius: 50%;" id="favItemImage3">
+                </div>
+                <div class="layout-col v-middle pad-m-l pad-m-r" id="favItemName3"></div>
+                <div class="layout-col v-middle pad-m-r">
+                    <i style="display:none" id="removeFav3" class="glyphicon glyphicon-trash"></i>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 <script>
-    for (var i = 0; i < JSON.parse(localStorage.getItem('favDetail')).length; i++) {
-        $("#favItemImage" + i).attr("src", "external/images/home/" + JSON.parse(localStorage.getItem('favDetail'))[i].imageName);
-        $("#favItemName" + i).text(JSON.parse(localStorage.getItem('favDetail'))[i].name);
+    for (var i = 0; i < JSON.parse(localStorage.getItem('teamFavDetail')).length; i++) {
+        $("#favItemImage" + i).attr("src", "external/images/team/" + JSON.parse(localStorage.getItem('teamFavDetail'))[i].imageName);
+        $("#favItemName" + i).text(JSON.parse(localStorage.getItem('teamFavDetail'))[i].name);
         // $("#removeFav"+i).text("removeFav"+i);
         $("#removeFav" + i).css("display", "block");
 
@@ -76,9 +78,9 @@
         if (typeof(Storage) !== "undefined") {
             // favList[JSON.parse(localStorage.getItem('favDetail')).length] = (favObject);
 
-            favList = JSON.parse(localStorage.getItem('favDetail'));
+            favList = JSON.parse(localStorage.getItem('teamFavDetail'));
             favList.splice(0, 1);
-            localStorage.setItem('favDetail', JSON.stringify(favList));
+            localStorage.setItem('teamFavDetail', JSON.stringify(favList));
 
             window.location.reload();
             // localStorage.removeItem('favDetail');
@@ -91,9 +93,9 @@
         if (typeof(Storage) !== "undefined") {
             // favList[JSON.parse(localStorage.getItem('favDetail')).length] = (favObject);
 
-            favList = JSON.parse(localStorage.getItem('favDetail'));
+            favList = JSON.parse(localStorage.getItem('teamFavDetail'));
             favList.splice(1, 1);
-            localStorage.setItem('favDetail', JSON.stringify(favList));
+            localStorage.setItem('teamFavDetail', JSON.stringify(favList));
 
             window.location.reload();
             // localStorage.removeItem('favDetail');
@@ -106,9 +108,9 @@
         if (typeof(Storage) !== "undefined") {
             // favList[JSON.parse(localStorage.getItem('favDetail')).length] = (favObject);
 
-            favList = JSON.parse(localStorage.getItem('favDetail'));
+            favList = JSON.parse(localStorage.getItem('teamFavDetail'));
             favList.splice(2, 1);
-            localStorage.setItem('favDetail', JSON.stringify(favList));
+            localStorage.setItem('teamFavDetail', JSON.stringify(favList));
 
             window.location.reload();
             // localStorage.removeItem('favDetail');
@@ -121,9 +123,9 @@
         if (typeof(Storage) !== "undefined") {
             // favList[JSON.parse(localStorage.getItem('favDetail')).length] = (favObject);
 
-            favList = JSON.parse(localStorage.getItem('favDetail'));
+            favList = JSON.parse(localStorage.getItem('teamFavDetail'));
             favList.splice(3, 1);
-            localStorage.setItem('favDetail', JSON.stringify(favList));
+            localStorage.setItem('teamFavDetail', JSON.stringify(favList));
 
             window.location.reload();
             // localStorage.removeItem('favDetail');
@@ -136,13 +138,14 @@
         if (typeof(Storage) !== "undefined") {
             // favList[JSON.parse(localStorage.getItem('favDetail')).length] = (favObject);
 
-            favList = JSON.parse(localStorage.getItem('favDetail'));
+            favList = JSON.parse(localStorage.getItem('teamFavDetail'));
             favList.splice(4, 1);
-            localStorage.setItem('favDetail', JSON.stringify(favList));
+            localStorage.setItem('teamFavDetail', JSON.stringify(favList));
 
             window.location.reload();
             // localStorage.removeItem('favDetail');
         }
     });
 
+    // window.location.reload();
 </script>

@@ -209,6 +209,27 @@
     <div nav-type="main-nav"></div>
 </div>
 
+<div data-role="page" id="page13" data-theme="e" class="full-height">
+    <div nav-type="side-nav"></div>
+
+    <div data-role="main" class="ui-content container" id="event-fav"></div>
+    <div nav-type="main-nav"></div>
+</div>
+
+<div data-role="page" id="page14" data-theme="e" class="full-height">
+    <div nav-type="side-nav"></div>
+
+    <div data-role="main" class="ui-content container" id="news-fav"></div>
+    <div nav-type="main-nav"></div>
+</div>
+
+<div data-role="page" id="page15" data-theme="e" class="full-height">
+    <div nav-type="side-nav"></div>
+
+    <div data-role="main" class="ui-content container" id="team-fav"></div>
+    <div nav-type="main-nav"></div>
+</div>
+
 <script>
 
     $('[data-role=page]').on('pageshow', function (event, ui) {
@@ -292,6 +313,24 @@
 
     $('[data-role=page]').on('pageshow', function (event, ui) {
         $("#" + event.target.id).find("#book-category").load("pages/book-category.html", function () {
+            $("#" + event.target.id).find("[data-role=navbar]").navbar();
+        });
+    });
+
+    $('[data-role=page]').on('pageshow', function (event, ui) {
+        $("#" + event.target.id).find("#event-fav").load("pages/event-fav.html", function () {
+            $("#" + event.target.id).find("[data-role=navbar]").navbar();
+        });
+    });
+
+    $('[data-role=page]').on('pageshow', function (event, ui) {
+        $("#" + event.target.id).find("#news-fav").load("pages/news-fav.html", function () {
+            $("#" + event.target.id).find("[data-role=navbar]").navbar();
+        });
+    });
+
+    $('[data-role=page]').on('pageshow', function (event, ui) {
+        $("#" + event.target.id).find("#team-fav").load("pages/team-fav.html", function () {
             $("#" + event.target.id).find("[data-role=navbar]").navbar();
         });
     });
