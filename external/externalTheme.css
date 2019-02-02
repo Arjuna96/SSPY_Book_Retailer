@@ -19,6 +19,9 @@
     float: right;
 }
 
+h2{
+    margin: 0px !important;
+}
 #nav-popup-popup {
     height: calc(100% - 3px);
     top: 0 !important;
@@ -121,6 +124,7 @@
 .mgn-l-t {
     margin-top: 15px;
 }
+
 
 .h-right {
     text-align: right;
